@@ -1,19 +1,26 @@
 import React, { Component } from "react";
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
+import Profile from './pages/profile';
+import Login from './pages/login';
+import ActiveUsers from './pages/activeUsers';
+import NotFound from './pages/notFound';
 // import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h2>Welcome to the greatest social app for musicians</h2>
+      <Router>
+        <div>
+          <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/activeusers" component={ActiveUsers}/>
+          <Route component = {NotFound}/>
+          </Switch>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    </Router>
+   
     );
   }
 }
