@@ -4,6 +4,8 @@ import Profile from './pages/profile';
 import Login from './pages/login';
 import ActiveUsers from './pages/activeUsers';
 import NotFound from './pages/notFound';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 // import logo from "./logo.svg";
 import "./App.css";
 
