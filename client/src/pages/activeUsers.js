@@ -1,19 +1,45 @@
 import React, { Component } from "react";
+import UserCard from '../components/User Profile Card/'
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 
-
-class ActiveUsers extends Component{
+class ActiveUsers extends Component {
     render() {
 
+        var activeUserStyle={
+            backgroundColor: "#e9ebee"
+        }
+
         return (
-            <div className="App">
-                <div className="App-header">
-                    {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <div className="activeUsers">
+                <NavBar />
+                <div className="users">
                     <h2>This is going to be the active users page!</h2>
+                    <div className="row" style = {activeUserStyle}>
+                        <div className="col-sm-3">
+
+                        </div>
+                        <div className="col-sm-3">
+                            <UserCard />
+                            <UserCard />
+                            <UserCard />
+                            <UserCard />
+
+                        </div>
+                        <div className="col-sm-3">
+                            <UserCard />
+                            <UserCard />
+                            <UserCard />
+                            <UserCard />
+
+                        </div>
+                        <div className="col-sm-3">
+
+                        </div>
+                    </div>
                 </div>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <Footer />
             </div>
         );
     }

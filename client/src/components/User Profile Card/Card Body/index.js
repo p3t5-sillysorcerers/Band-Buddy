@@ -1,14 +1,27 @@
-import React from 'react';
+import React  from "react";
+import './style.css'
+
+const user = {
+    userInfo: {
+        image: "https://randomuser.me/api/portraits/women/31.jpg",
+        name: "Jamie Winehouse",
+        info: "I'm a guitarist and vocalist looking for a band.",
+        location: "Wicker Park"
+    }
+}
 
 function CardBody() {
-
     return (
-        <div>
-            <img src="..." classNameName="card-img-top" alt="..."></img>
-            <div classNameName="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+        <div className="card">
+            <div className="img-container">
+                <img src={user.userInfo.image} className="card-image" alt="..."></img>
+            </div>
+            <div className="card-body">
+                <h3 className="name">{user.userInfo.name}</h3>
+                <p className="title">{user.userInfo.info}</p>
+                <p className="card-text">{user.userInfo.location}</p>
+                <a href="#" className="btn btn-primary">Contact Me</a>
+                <button type="button" class="btn btn-success">Available</button>
             </div>
         </div>
     );
