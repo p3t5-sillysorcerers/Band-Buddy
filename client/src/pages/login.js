@@ -60,9 +60,9 @@ export default class Login extends Component {
             onClick={(event) => this.handleClick(event)}
             type="submit"
           >
-            Sign Up
+            Create Profile
           </Button>
-          {/* <a href = >Sign Up</a> */}
+          {/* <a href = >/a> */}
         </Form>
       </div>
     );
