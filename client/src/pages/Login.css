@@ -8,3 +8,7 @@
       max-width: 320px;
     }
   }
+  .btn-block {
+    display: block;
+    width: 25%;
+}
