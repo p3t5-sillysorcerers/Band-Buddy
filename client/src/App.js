@@ -7,7 +7,7 @@ import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Data from './pages/dataTest'
+import Data from './pages/data'
 
 import "./App.css";
 

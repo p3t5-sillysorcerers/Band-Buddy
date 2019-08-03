@@ -10,7 +10,7 @@ class Profiles extends Component {
         profiles: [],
     };
 
-    // Loads ALL the Profiles  in the DB
+    // Loads ALL the Profiles in the DB
     componentDidMount(){
         axios.get("/api/profiles")
         .then(response =>{
