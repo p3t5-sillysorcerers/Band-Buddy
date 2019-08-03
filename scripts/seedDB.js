@@ -3,9 +3,14 @@ const db = require("../models");
 
 // This file empties the Books collection and inserts the books below
 
+// mongoose.connect(
+//   process.env.MONGODB_URI ||
+//   "mongodb://localhost/musicAppDB"
+// );
+
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/musicAppDB"
+  "mongodb://musicAppDB:FrenchToast4@ds259347.mlab.com:59347/heroku_bdq0hmmf"
 );
 
 const profileSeed = [
