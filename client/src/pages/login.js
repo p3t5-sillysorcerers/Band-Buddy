@@ -48,7 +48,7 @@ export default class Login extends Component {
           </Form.Group>
           <Button
             block
-            bsSize="large"
+            buttonSize="large"
             onClick={(event) => this.handleClick(event)}
             type="submit"
           >
@@ -56,7 +56,7 @@ export default class Login extends Component {
           </Button>
           <Button
             block
-            bsSize="large"
+            buttonSize="large"
             onClick={(event) => this.handleClick(event)}
             type="submit"
           >
