@@ -29,7 +29,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="Login">Username
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="email" bsSize="large">
             <Form.Control
@@ -38,7 +38,7 @@ export default class Login extends Component {
               value={this.state.email}
               onChange={this.handleChange}
             />
-          </Form.Group>
+          </Form.Group>Password
           <Form.Group controlId="password" bsSize="large">
             <Form.Control
               value={this.state.password}
