@@ -49,7 +49,7 @@ export default class Login extends Component {
           <Button
             block
             bsSize="large"
-            disabled={!this.validateForm()}
+            onClick={(event) => this.handleClick(event)}
             type="submit"
           >
             Login
