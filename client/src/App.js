@@ -7,7 +7,9 @@ import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Data from './pages/data'
+import Data from './pages/data';
+import Bootstrap from "react-bootstrap";
+
 
 import "./App.css";
 
@@ -16,6 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <NavBar />
           <Switch>
           <Route exact path="/" component={Login}/>
           <Route exact path="/create" component={Create}/>
@@ -24,6 +27,7 @@ class App extends Component {
           <Route exact path="/data" component={Data}/>
           <Route component = {NotFound}/>
           </Switch>
+          <Footer />
         </div>
     </Router>
    
