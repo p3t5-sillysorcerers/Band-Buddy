@@ -56,7 +56,7 @@ export default class Login extends Component {
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
-            onClick={(event) => this.handleClick(event)}
+            onClick={(event) => this.handleSubmit(event)}
             type="submit"
           >
             Login
@@ -65,7 +65,7 @@ export default class Login extends Component {
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
-            onClick={(event) => this.handleClick(event)}
+            onClick={(event) => this.handleSubmit(event)}
             type="submit"
           >
             Create Profile
