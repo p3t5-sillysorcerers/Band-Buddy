@@ -13,7 +13,6 @@ class ActiveUsers extends Component {
 
         return (
             <div className="activeUsers">
-                <NavBar />
                 <div className="users">
                     <h2>This is going to be the active users page!</h2>
                     <div className="row" style = {activeUserStyle}>
@@ -39,7 +38,6 @@ class ActiveUsers extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         );
     }
