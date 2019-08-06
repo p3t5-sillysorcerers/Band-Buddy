@@ -40,7 +40,7 @@ class ImageUpload extends React.Component {
                 <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png" className="card-image" alt="..."></img>
                 </div>
                 <form onSubmit={(e) => this._handleSubmit(e)}>
-                    <input className="fileInput"
+                    <input className="fileInput" id="fileInput"
                         type="file"
                         onChange={(e) => this._handleImageChange(e)} />
                     <button className="submitButton"

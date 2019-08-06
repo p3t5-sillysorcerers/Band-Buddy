@@ -15,7 +15,7 @@
 
 body{
   background-image: url("../images/namroud-gorguis-FZWivbri0Xk-unsplash.jpg");
-  
+  background-size: cover;
 }
 
 .login{
