@@ -6,10 +6,11 @@ const NavBar = () => (
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Name TBD</a>
+      <img src="https://i.imgur.com/Psb5bVc.png"></img>
+      {/* <a class="navbar-brand" href="#">Band Buddy</a> */}
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li><a href="#">Profile</a></li>
       <li><a href="#">Search</a></li>
     </ul>

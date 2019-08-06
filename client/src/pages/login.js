@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 // import Bootstrap from "react-bootstrap";
 // import NavBar from "../components/NavBar/NavBar";
+import "./Login.css"
 
 export default class Login extends Component {
   constructor(props) {
@@ -30,6 +31,8 @@ export default class Login extends Component {
 
   render() {
     return (
+      // <div class="container col-4"></div>
+      <div class="container login">
       <div className="Login">Username
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="email" bsSize="large">
@@ -50,6 +53,7 @@ export default class Login extends Component {
           <Button
             block
             buttonSize="large"
+            style={{backgroundColor:"#222222"}}
             onClick={(event) => this.handleClick(event)}
             type="submit"
           >
@@ -58,6 +62,7 @@ export default class Login extends Component {
           <Button
             block
             buttonSize="large"
+            style={{backgroundColor:"#222222"}}
             onClick={(event) => this.handleClick(event)}
             type="submit"
           >
@@ -66,6 +71,9 @@ export default class Login extends Component {
           {/* <a href = >/a> */}
         </Form>
       </div>
+      </div>
+      // <div class="container col-4"></div>
+      
     );
   }
 }
