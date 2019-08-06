@@ -19,5 +19,7 @@ body{
 }
 
 .login{
-  width: 800px;
+  width: 600px;
+  margin-bottom: 500px;
+  margin-top: -20px;
 }

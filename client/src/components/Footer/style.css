@@ -1,10 +1,11 @@
 .footer {
     background: #222222;
-    color: white;
-    position: fixed;
+    color: orange;
+    position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 50px;
+    height: 160px;
+    margin-bottom: 0px;
 }
 
 .links ul {
@@ -12,21 +13,21 @@
 }
 
 li a {
-    color: white;
+    color: orange;
     transition: color .2s;
 }
 
-.about-company i {
+/* .about-company i {
     
-        font-size: 25px;
-}
-.about-company a {
-        color: white;
+        font-size: 20px;
+} */
+/* .about-company a {
+        color: green;
         transition: color .2s;
-}
+} */
 
 .location i {
-        font-size: 18px;
+        font-size: 15px;
     
 }
 
@@ -34,11 +35,20 @@ li a {
     border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
-/* .footerimage{
-    margin-top: 0px;
+#footerimage{
+    margin-top: -50px;
+    margin-bottom: -50px;
+    height: 150px;
+    width: 150px;
 
-} */
+}
 
 .footer-maintext{
     padding-left: 10px;
+    padding-top: 20px;
+}
+
+
+.links{
+    padding-left: 20px;
 }
