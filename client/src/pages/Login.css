@@ -1,0 +1,25 @@
+/* @media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+  .btn-block {
+    display: block;
+    width: 25%;
+} */
+
+body{
+  background-image: url("../images/namroud-gorguis-FZWivbri0Xk-unsplash.jpg");
+  background-size: cover;
+}
+
+.login{
+  width: 600px;
+  margin-bottom: 500px;
+  margin-top: -20px;
+}

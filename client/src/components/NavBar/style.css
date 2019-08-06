@@ -1,0 +1,12 @@
+.navbar{
+    /* background-color: blue; */
+    margin-bottom: 50px;
+    height: 10px;
+}
+
+#navLogo{
+    height: 150px;
+    width: auto; 
+    padding-right: 20px;
+    margin-top: -53px;
+}

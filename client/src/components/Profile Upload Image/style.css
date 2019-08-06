@@ -1,0 +1,75 @@
+.previewComponent{
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+  background-color: white;
+  margin-left: 20%;
+}
+.imgPreview{
+  text-align: center;
+  margin: 5px 15px;
+  height: 300px;
+  width: 250px;
+  border-radius: 3px;
+  border-color: #eee #ddd #bbb;
+  border-style: solid;
+
+}
+
+.card-image{
+    display: flex !important;
+    align-items: center !important;
+    background-color: #fff !important;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto;
+}
+
+.input{
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.submitButton{
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
