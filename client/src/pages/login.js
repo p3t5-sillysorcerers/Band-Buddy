@@ -18,7 +18,7 @@ export default class Login extends Component {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-  handleChange = event => {
+  handleInputChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
@@ -26,6 +26,8 @@ export default class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.state);
+
   }
 
   render() {
@@ -37,13 +39,13 @@ export default class Login extends Component {
               autoFocus
               type="email"
               value={this.state.email}
-              onChange={this.handleChange}
+              onChange={this.handleInputChange}
             />
           </Form.Group>Password
           <Form.Group controlId="password" bsSize="large">
             <Form.Control
               value={this.state.password}
-              onChange={this.handleChange}
+              onChange={this.handleInputChange}
               type="password"
             />
           </Form.Group>
