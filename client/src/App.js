@@ -7,7 +7,9 @@ import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Data from './pages/data';
+import AllData from './pages/00allProfileData';
+import InputData from './pages/00inputProfileData'
+import ProfileData from './pages/00profileData'
 import Bootstrap from "react-bootstrap";
 
 
@@ -24,7 +26,9 @@ class App extends Component {
           <Route exact path="/create" component={Create}/>
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/activeusers" component={ActiveUsers}/>
-          <Route exact path="/data" component={Data}/>
+          <Route exact path="/data" component={AllData}/>
+          <Route exact path="/input" component={InputData}/>
+          <Route exact path="/profiles/:id" component={ProfileData}/>
           <Route component = {NotFound}/>
           </Switch>
           <Footer />

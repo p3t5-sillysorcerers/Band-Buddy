@@ -9,22 +9,18 @@ class Profile extends Component{
     render(){
         
         return(
-
             <div className="userProfile">
                 <NavBar />
                 <div className="row">
                     <div className="col-sm-4">
-                   
                     </div>
                     <div className="col-sm-8">
                     <ProfileImage />
-                    <ProfileInfo/>
+                    <ProfileInfo />
                     </div>
                 </div>
                 <Footer />
             </div>
-
-
 
         )
     }
