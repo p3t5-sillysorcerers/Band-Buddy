@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 // import Bootstrap from "react-bootstrap";
 // import NavBar from "../components/NavBar/NavBar";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Login.css"
 
 export default class Login extends Component {
@@ -52,7 +53,7 @@ export default class Login extends Component {
               type="password"
             />
           </Form.Group>
-          <Button
+          {/* <Button
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
@@ -60,43 +61,27 @@ export default class Login extends Component {
             type="submit"
           >
             Login
-          </Button>
-          <Button
+          </Button> */}
+          {/* <Button
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
-            onClick={(event) => this.handleSubmit(event)}
+            onClick={(event) => this.handleSubmit(event)} {...<a href = '/data'></a>}
             type="submit"
           >
             Create Profile
-          </Button>
-          {/* <a href = >/a> */}
+          </Button> */}
+
+            <Link to="/profile">Login</Link>
+            <br></br>
+            <br></br>
+            <Link to="/create">Create profile</Link>
+    
         </Form>
       </div>
       </div>
-      // <div class="container col-4"></div>
+
       
     );
   }
 }
-
-// class Login extends Component {
-
-//     render() {
-
-//         return (
-            
-//             <div className="App">
-//                 <div className="App-header">
-//                     {/* <img src={logo} className="App-logo" alt="logo" /> */}
-//                     <h2>This is going to be the login page</h2>
-//                 </div>
-//                 <p className="App-intro">
-//                     To get started, edit <code>src/App.js</code> and save to reload.
-//                 </p>
-//             </div>
-//         );
-//     }
-// }
-
-// export default Login;

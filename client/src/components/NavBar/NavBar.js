@@ -1,5 +1,6 @@
 import React from 'react';
 import "./style.css"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const NavBar = () => (
 
@@ -10,9 +11,11 @@ const NavBar = () => (
       {/* <a class="navbar-brand" href="#">Band Buddy</a> */}
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Search</a></li>
+      <Link to="/profile">My Profile</Link>
+      {/* <br></br>
+      <Link to="/create">Create profile</Link> */}
+      <br></br>
+      <Link to="/activeusers">Search</Link>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
