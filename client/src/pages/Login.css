@@ -18,8 +18,17 @@ body{
   background-size: cover;
 }
 
+/* .backgroundimage{
+  background-image: url("../images/namroud-gorguis-FZWivbri0Xk-unsplash.jpg");
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+
+} */
+
 .login{
   width: 600px;
   margin-bottom: 500px;
   margin-top: -20px;
 }
+
