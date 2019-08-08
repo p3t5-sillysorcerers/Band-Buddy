@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import ProfileCreateForm from '../components/Profile Create Form';
-import ProfileUploadImage from "../components/Profile Upload Image";
+import InputData from './00inputProfileData';
 
 class Create extends Component{
 
@@ -11,13 +10,7 @@ class Create extends Component{
 
             <div className="createPage">
                 <div className="row">
-                    <div className="col-sm-4">
-                    <ProfileUploadImage />
-                    </div>
-                    <div className="col-sm-4">
-                    <ProfileCreateForm/>
-                    </div>
-                    <div className="col-sm-4"></div>
+                    <InputData/>
                 </div>
             </div>
 

@@ -7,7 +7,6 @@ const user = {
     }
 }
 
-
 class CardBody extends React.Component {
 
 render() {
