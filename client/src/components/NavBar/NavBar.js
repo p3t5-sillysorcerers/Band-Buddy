@@ -11,11 +11,13 @@ const NavBar = () => (
       {/* <a class="navbar-brand" href="#">Band Buddy</a> */}
     </div>
     <ul class="nav navbar-nav">
-      <Link to="/profile">My Profile</Link>
+      <Link to="/profile"style={{color: "white", height: "16px", padding: "10px"}}
+      >My Profile</Link>
       {/* <br></br>
       <Link to="/create">Create profile</Link> */}
       <br></br>
-      <Link to="/activeusers">Search</Link>
+      <Link to="/activeusers"style={{color: "white", height: "16px", padding: "10px"}}
+      >Search</Link>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
