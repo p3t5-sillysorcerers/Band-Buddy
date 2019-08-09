@@ -72,10 +72,12 @@ export default class Login extends Component {
             Create Profile
           </Button> */}
 
-            <Link to="/profile">Login</Link>
+            <Link to="/profile"
+            style={{backgroundColor:"#222222", color: "white", height: "16px", padding: "10px"}}>Login</Link>
             <br></br>
             <br></br>
-            <Link to="/create">Create profile</Link>
+            <Link to="/create"
+            style={{backgroundColor:"#222222", color: "white", height: "16px", padding: "10px"}}>Create profile</Link>
     
         </Form>
       </div>
