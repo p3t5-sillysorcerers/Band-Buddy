@@ -9,9 +9,10 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findByUser: function(req, res) {
+    console.log(req.params.userName)
     db.Profiles
-      .findById(req.params.id)
+      .findOne({userName: `${req.params.userName}`})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

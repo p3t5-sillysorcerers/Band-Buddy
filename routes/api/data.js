@@ -7,8 +7,10 @@ router.route("/")
   .post(profileController.create);
 
 // Matches with "/api/profiles/:id"
-  router.route("/:id")
-  .get(profileController.findById)
-  .put(profileController.update)
+  router.route("/:userName")
+  .get(profileController.findByUser)
+  .put(profileController.update);
 
   module.exports = router;
+
+

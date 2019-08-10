@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, TextArea, FormBtn } from '../components/00inputProfileFrom';
 import ProfileUploadImage from "../components/Profile Upload Image";
+// import ReactUploadImage from "../components/uploadtest"
 import API from "../utils/API";
 
 class InputData extends Component {
@@ -23,6 +24,7 @@ class InputData extends Component {
     });
   };
 
+  //Form Submit
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("clicked")
@@ -40,8 +42,9 @@ class InputData extends Component {
       })
   };
 
+  //Image file Added
   handlePhoto(file){
-    console.log(this);
+    console.log(this.state.file);
     this.setState({
       file:file
     })
@@ -53,6 +56,7 @@ class InputData extends Component {
         <div className="row">
           <div className="col-sm-4">
             <ProfileUploadImage data={this.handlePhoto.bind(this)}  />
+            {/* <ReactUploadImage /> */}
           </div>
           <div className="col-sm-4">
             <form>

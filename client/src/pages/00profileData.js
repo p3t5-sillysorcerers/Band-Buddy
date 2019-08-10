@@ -11,12 +11,11 @@ class Profile extends Component {
    
     // Loads one  Profile in the DB
     componentDidMount(){
-        axios.get(`${"/api" + window.location.pathname}`)
+        axios.get(`${"/api/profiles" + window.location.pathname}`)
         .then(response =>{
         this.setState({
           profile:response.data
         })
-        console.log(window.location.pathname )
         console.log(this.state)
         })
         };

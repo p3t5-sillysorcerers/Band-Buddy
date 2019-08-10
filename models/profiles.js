@@ -7,13 +7,14 @@ const profileSchema = new Schema({
   instrument: { type: String },
   skillLevel: { type: String },
   musicGenres:[],
-  image: { type: String },
   info: { type: String },
   location: { type: String },
   profileLinks: { type: String },
+  image: {type:Buffer },
   updated: { type: Date, default: Date.now }
 });
 
 const Profiles = mongoose.model("Profiles", profileSchema);
+
 
 module.exports = Profiles;
