@@ -17,10 +17,10 @@ const Footer = () => (
                 <div class="col-lg-3 col-xs-12">
                     <h4 class="mt-lg-0 mt-sm-3 links">Links</h4>
                     <ul class="m-0 p-0">
-                        <li class="footer-links"><a href="#">About</a></li>
-                        <li class="footer-links"><a href="#">Your profile</a></li>
-                        <li class="footer-links"><a href="#">Search</a></li>
-                        <li class="footer-links"><a href="#">Contact Us</a></li>
+                        <li class="footer-links"><a href="/about">About</a></li>
+                        <li class="footer-links"><a href="/profile">Your profile</a></li>
+                        <li class="footer-links"><a href="/activeusers">Search</a></li>
+                        <li class="footer-links"><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-xs-12 location">
