@@ -52,7 +52,7 @@ class InputData extends Component {
       <div className="createPage">
         <div className="row">
           <div className="col-sm-4">
-            <ProfileUploadImage data={this.handlePhoto.bind(this)}  />
+            {/* <ProfileUploadImage data={this.handlePhoto.bind(this)}  /> */}
           </div>
           <div className="col-sm-4">
             <form>
@@ -87,6 +87,9 @@ class InputData extends Component {
                 value={this.state.musicGenres} />
               <FormBtn onClick={this.handleFormSubmit}>Create Profile</FormBtn>
             </form>
+          </div>
+          <div className="col-sm-4">
+            <ProfileUploadImage data={this.handlePhoto.bind(this)}  />
           </div>
           <div className="col-sm-4"></div>
         </div>

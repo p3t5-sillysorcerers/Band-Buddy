@@ -29,8 +29,12 @@ class ProfileCreateForm extends Component {
 
     render() {
        
+        
         return (
-                    <form className="form" >
+            // <ImageBackground source={"https://st.depositphotos.com/1757583/3373/i/950/depositphotos_33733567-stock-photo-music-background.jpg"} style={{width: '100%', height: '100%'}}>
+                   
+                   
+                   <form className="form" >
                         <input className="formInput"
                             value={this.state.firstName}
                             name="firstName"
@@ -97,7 +101,10 @@ class ProfileCreateForm extends Component {
                         <br/>
                         <button className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                     </form>
+                    // </ImageBackground>
+
         )
+
     }
 
 }

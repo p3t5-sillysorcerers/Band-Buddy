@@ -11,14 +11,14 @@ const NavBar = () => (
       {/* <a class="navbar-brand" href="#">Band Buddy</a> */}
     </div>
     <ul class="nav navbar-nav">
-      <Link to="/profile"style={{color: "white", height: "16px", padding: "25px"}}
+      <Link to="/profile"style={{color: "orange", height: "16px", padding: "25px"}}
       >My Profile</Link>
       {/* <br></br>
       <Link to="/create">Create profile</Link> */}
       {/* <br></br> */}
-      <Link to="/activeusers"style={{color: "white", height: "16px", padding: "25px"}}
+      <Link to="/activeusers"style={{color: "orange", height: "16px", padding: "25px", paddingTop: "15px"}}
       >Search</Link>
-            <Link to="/activeusers"style={{color: "white", height: "16px", padding: "25px"}}
+            <Link to="/activeusers"style={{color: "orange", height: "16px", paddingLeft: "25px", paddingTop: "15px"}}
       >Active Users</Link>
     </ul>
     <ul class="nav navbar-nav navbar-right">

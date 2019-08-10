@@ -7,6 +7,8 @@ class ImageUpload extends React.Component {
         this.state = { file: '', imagePreviewUrl: '' };
     }
 
+    
+
     handleSubmit(event) {
         event.preventDefault();
     }
