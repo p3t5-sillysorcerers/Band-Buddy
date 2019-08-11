@@ -12,6 +12,7 @@ class AllProfiles extends Component {
 
     // Loads ALL the Profiles in the DB
     componentDidMount(){
+      // console.log("state" + this.state)
         axios.get("/api/profiles")
         .then(response =>{
         this.setState({
@@ -42,8 +43,8 @@ class AllProfiles extends Component {
             {this.state.profiles.length ? ( 
               <List>
                 {this.state.profiles.map(profile => (
-                  <ListItem key={profile._id}>
-                    <a href={"/profiles/" + profile._id}>
+                  <ListItem key={profile.userName}>
+                    <a href={profile.userName}>
                       <strong>
                         Name: {profile.name} // Username: {profile.userName} // From: {profile.location} // Plays: {profile.instrument}
                       </strong>
