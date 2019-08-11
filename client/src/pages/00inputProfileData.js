@@ -55,12 +55,7 @@ class InputData extends Component {
       <div className="createPage">
         <div className="row">
           <div className="col-sm-4">
-<<<<<<< HEAD
             {/* <ProfileUploadImage data={this.handlePhoto.bind(this)}  /> */}
-=======
-            <ProfileUploadImage data={this.handlePhoto.bind(this)}  />
-            {/* <ReactUploadImage /> */}
->>>>>>> c20dce1ccefa894997624966651c3233efaa867f
           </div>
           <div className="col-sm-4">
             <form>
