@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, TextArea, FormBtn } from '../components/00inputProfileFrom';
-import ProfileUploadImage from "../components/Profile Upload Image";
+import ProfileUploadImage from "../components/ImageUpload";
 // import ReactUploadImage from "../components/uploadtest"
 import API from "../utils/API";
 
@@ -27,14 +27,14 @@ class InputData extends Component {
   //Form Submit
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("clicked")
+    console.log("clicked", this.state)
     API.inputProfiles({
       name: this.state.name,
       userName: this.state.userName,
       location: this.state.location,
       instrument: this.state.instrument,
       skillLevel: this.state.skillLevel,
-      musicGenres: this.state.musicGenres,
+      musicGenres: this.state.musicGenres,  
       image: this.state.file
     })
       .then(response => {
