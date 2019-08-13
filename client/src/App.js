@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import AllData from './pages/00allProfileData';
 import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
+import UploadIamage from './pages/00uploadImage'
 import Bootstrap from "react-bootstrap";
 import "./App.css";
 // import ChatMessage from './components/Chat/ChatMessage';
@@ -36,6 +37,7 @@ class App extends Component {
           <Route exact path="/activeusers" component={ActiveUsers}/>
           <Route exact path="/data" component={AllData}/>
           <Route exact path="/input" component={InputData}/>
+          <Route exact path="/image" component={UploadIamage}/>
           <Route exact path="/:userName" component={ProfileData}/>
           <Route component = {NotFound}/>
           </Switch>
