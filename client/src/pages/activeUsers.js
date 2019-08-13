@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import UserCard from '../components/User Profile Card/'
+// import UserCard from '../components/User Profile Card/'
 import CardBody from '../components/User Profile Card/Card Body'
 import axios from "axios";
+import Profile from './profile';
 
 
 
@@ -28,10 +29,10 @@ class ActiveUsers extends Component {
                 <div className="activeUsers">
                     <div className="users">
                         <div className="row">
-                            <div className="col-sm-3">
-
+                            <div className="col-sm-4">
+                                <Profile/>
                             </div>
-                            <div className="col-sm-6">
+                            <div className="col-sm-8">
                                 {this.state.profiles.map((profile,i) => {
                                         console.log('profile in .map ???', profile);
                                     
@@ -46,9 +47,6 @@ class ActiveUsers extends Component {
                                     )
                                 })
                             }
-                            </div>
-                            <div className="col-sm-3">
-
                             </div>
                         </div>
                     </div>

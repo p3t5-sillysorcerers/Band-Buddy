@@ -20,7 +20,7 @@ app.use(routes);
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/musicAppDB"
+  "mongodb://heroku_bdq0hmmf:ufc9jh2h6453oc1qfa50i7ea5m@ds259347.mlab.com:59347/heroku_bdq0hmmf"
 );
 
 app.get("*", (req, res) => {
