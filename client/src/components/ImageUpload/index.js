@@ -12,6 +12,7 @@ class ImageUpload extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
     }
+
     handleImageChange(event) {
         event.preventDefault();
 
@@ -54,5 +55,7 @@ class ImageUpload extends React.Component {
         )
     }
 }
+
+
 
 export default ImageUpload;
