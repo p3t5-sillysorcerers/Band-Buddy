@@ -22,7 +22,7 @@ const NavBar = () => (
       >Active Users</Link>
     </ul>
     <ul className="nav navbar-nav navbar-right">
-      <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <Link to="/"><li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li></Link>
     </ul>
   </div>
 </nav>
