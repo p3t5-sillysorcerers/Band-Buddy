@@ -18,3 +18,7 @@ input.form-control {
 input[type=file] {
   width: 100%;
 } */
+
+html, body, .Login-component {
+  height: 100%;
+}

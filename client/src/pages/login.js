@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 // import Bootstrap from "react-bootstrap";
 // import NavBar from "../components/NavBar/NavBar";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -35,25 +35,27 @@ export default class Login extends Component {
   render() {
     return (
       // <div class="container col-4"></div>
-      <div class="container login">
-      <div className="Login">Username
+      // <Image source={require('../images/cassette.jpg')} style={styles.container}>
+
+        <div class="container login">
+          <div className="Login">Username
         <Form onSubmit={this.handleSubmit}>
-          <Form.Group controlId="email" bsSize="large">
-            <Form.Control
-              autoFocus
-              type="email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-            />
-          </Form.Group>Password
+              <Form.Group controlId="email" bsSize="large">
+                <Form.Control
+                  autoFocus
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+              </Form.Group>Password
           <Form.Group controlId="password" bsSize="large">
-            <Form.Control
-              value={this.state.password}
-              onChange={this.handleInputChange}
-              type="password"
-            />
-          </Form.Group>
-          {/* <Button
+                <Form.Control
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  type="password"
+                />
+              </Form.Group>
+              {/* <Button
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
@@ -62,7 +64,7 @@ export default class Login extends Component {
           >
             Login
           </Button> */}
-          {/* <Button
+              {/* <Button
             block
             buttonSize="large"
             style={{backgroundColor:"#222222"}}
@@ -72,18 +74,19 @@ export default class Login extends Component {
             Create Profile
           </Button> */}
 
-            <Link to="/profile"
-            style={{backgroundColor:"#222222", color: "white", height: "16px", padding: "10px"}}>Login</Link>
-            <br></br>
-            <br></br>
-            <Link to="/create"
-            style={{backgroundColor:"#222222", color: "white", height: "16px", padding: "10px"}}>Create profile</Link>
-    
-        </Form>
-      </div>
-      </div>
+              <Link to="/profile"
+                style={{ backgroundColor: "#222222", color: "white", height: "16px", padding: "10px", paddingRight: "524px", }}>Login</Link>
+              <br></br>
+              <br></br>
+              <Link to="/create"
+                style={{ backgroundColor: "#222222", color: "white", height: "16px", padding: "10px", paddingRight: "474px" }}>Create profile</Link>
 
-      
+            </Form>
+          </div>
+        </div>
+      // </Image>
+
+
     );
   }
 }
