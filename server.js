@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
+require('./scripts/passport');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
