@@ -31,8 +31,8 @@ import User from "./User"
 class App extends Component {
 
   state = {
-    username: "",
-    password: "",
+    username: "username",
+    password: "password",
     user: {},
     loggedIn: false
   }
@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   handleInputChange = event => {
+    console.log(event.target);
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -100,69 +101,70 @@ class App extends Component {
         login: this.login,
         logout: this.logout
       }}>
-        <div className="App">
-          <Nav />
-        <h1>React-Passport-Context</h1>
-        <IdentityContext.Consumer>
-          {({user, loggedIn}) => (
-            <h2>{this.state.errorMessage 
-              ? this.state.errorMessage 
-              : loggedIn 
-                ? `${user.username} is logged in` 
-                : "Logged Out"}</h2>
-          )}
-        </IdentityContext.Consumer>
-        <IdentityContext.Consumer>
-          {({user, loggedIn, login}) => (
-        <form>
-          <input 
-            type="text" 
-            name="username" 
-            placeholder="Username"
-            value={this.state.username}
-            onChange={this.handleInputChange} /><br />
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleInputChange} /><br />
-          <input 
-            type="submit"
-            name="submit"
-            value="Login"
-            onClick={login} />
-        </form>
-        )}
-        </IdentityContext.Consumer>
-      </div>
-      <div>
-        <User />
-      </div>
+           <Router>
+        <div>
+          <NavBar />
+          <Switch>
+          <Route exact path="/" component={() => <Login loginHandler={this.state.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
+          <Route exact path="/chat" component={ChatPage}/>
+          <Route exact path="/create" component={Create}/>
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/activeusers" component={ActiveUsers}/>
+          <Route exact path="/data" component={AllData}/>
+          <Route exact path="/input" component={InputData}/>
+          <Route exact path="/image" component={UploadIamage}/>
+          <Route exact path="/:userName" component={ProfileData}/>
+          <Route component = {NotFound}/>
+          </Switch>
+          <Footer />
+        </div>
+    </Router>
       </IdentityContext.Provider>
 
 
-    //   <Router>
-    //     <div>
-    //       <NavBar />
-    //       <Switch>
-    //       <Route exact path="/" component={Login}/>
-    //       <Route exact path="/chat" component={ChatPage}/>
-    //       <Route exact path="/create" component={Create}/>
-    //       <Route exact path="/profile" component={Profile}/>
-    //       <Route exact path="/activeusers" component={ActiveUsers}/>
-    //       <Route exact path="/data" component={AllData}/>
-    //       <Route exact path="/input" component={InputData}/>
-    //       <Route exact path="/image" component={UploadIamage}/>
-    //       <Route exact path="/:userName" component={ProfileData}/>
-    //       <Route component = {NotFound}/>
-    //       </Switch>
-    //       <Footer />
-    //     </div>
-    // </Router>
+   
    
     );
   }
 }
 
 export default App;
+
+/*
+<div className="App">
+<Nav />
+<h1>React-Passport-Context</h1>
+<IdentityContext.Consumer>
+{({user, loggedIn}) => (
+  <h2>{this.state.errorMessage 
+    ? this.state.errorMessage 
+    : loggedIn 
+      ? `${user.username} is logged in` 
+      : "Logged Out"}</h2>
+)}
+</IdentityContext.Consumer>
+<IdentityContext.Consumer>
+{({user, loggedIn, login}) => (
+<form>
+<input 
+  type="text" 
+  name="username" 
+  placeholder="Username"
+  value={this.state.username}
+  onChange={this.handleInputChange} /><br />
+<input 
+  type="password" 
+  name="password" 
+  placeholder="Password"
+  value={this.state.password}
+  onChange={this.handleInputChange} /><br />
+<input 
+  type="submit"
+  name="submit"
+  value="Login"
+  onClick={login} />
+</form>
+)}
+</IdentityContext.Consumer>
+</div>
+*/

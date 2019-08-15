@@ -39,21 +39,24 @@ export default class Login extends Component {
 
         <div class="container login">
           <div className="Login">Username
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.props.login}>
               <Form.Group controlId="email" bsSize="large">
                 <Form.Control
                   autoFocus
                   type="email"
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
+                  name="username"
+                  value={this.props.username}
+                  onChange={this.props.handleInput}
                 />
               </Form.Group>Password
           <Form.Group controlId="password" bsSize="large">
                 <Form.Control
-                  value={this.state.password}
-                  onChange={this.handleInputChange}
+                  value={this.props.password}
+                  name="password"
+                  onChange={this.props.handleInput}
                   type="password"
                 />
+                <input class="btn btn-lg btn-primary" type="submit" value="Log In" />
               </Form.Group>
               {/* <Button
             block
@@ -74,12 +77,12 @@ export default class Login extends Component {
             Create Profile
           </Button> */}
 
-              <Link to="/profile"
+              {/* <Link to="/profile"
                 style={{ backgroundColor: "#222222", color: "white", height: "16px", padding: "10px", paddingRight: "524px", }}>Login</Link>
               <br></br>
               <br></br>
               <Link to="/create"
-                style={{ backgroundColor: "#222222", color: "white", height: "16px", padding: "10px", paddingRight: "474px" }}>Create profile</Link>
+                style={{ backgroundColor: "#222222", color: "white", height: "16px", padding: "10px", paddingRight: "474px" }}>Create profile</Link> */}
 
             </Form>
           </div>
