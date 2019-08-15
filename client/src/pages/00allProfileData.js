@@ -4,14 +4,15 @@ import axios from "axios";
 import API from "../utils/API";
 
 
-class Profiles extends Component {
-    // Initialize this.state.books as an empty array
+class AllProfiles extends Component {
+    // Initialize this.state.profiles as an empty array
     state = {
         profiles: [],
     };
 
     // Loads ALL the Profiles in the DB
     componentDidMount(){
+      // console.log("state" + this.state)
         axios.get("/api/profiles")
         .then(response =>{
         this.setState({
@@ -33,39 +34,6 @@ class Profiles extends Component {
     //         .catch(err => console.log(err));
     // };
 
-
-    //   handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     console.log(name, value)
-    //     // Updating the input's state
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
-
-    //THIS IS REALLY IMPORTANT 
-    //   handleFormSubmit = event => {
-    //     event.preventDefault();
-    //   console.log("clicked")
-    //     API.saveProfile({
-    //     name: this.state.name,
-    //     username: this.state.username,
-    //     instrument: this.state.instrument
-    //   })
-    //   .then(response=>{
-    //     this.loadProfiles()
-    //     })
-    //   };
-    // handleDelete = event =>{
-
-    //   console.log(event.target.getAttribute("data-id"))
-    //   API.deleteBook(event.target.getAttribute("data-id"))
-    //   .then(response=>{
-    //     this.loadProfiles()
-    //   })
-    // }
-
-
     render() {
         return (
 
@@ -75,8 +43,8 @@ class Profiles extends Component {
             {this.state.profiles.length ? ( 
               <List>
                 {this.state.profiles.map(profile => (
-                  <ListItem key={profile._id}>
-                    <a href={"/profile/" + profile._id}>
+                  <ListItem key={profile.userName}>
+                    <a href={profile.userName}>
                       <strong>
                         Name: {profile.name} // Username: {profile.userName} // From: {profile.location} // Plays: {profile.instrument}
                       </strong>
@@ -94,4 +62,4 @@ class Profiles extends Component {
 }
 
 
-export default Profiles;
+export default AllProfiles;

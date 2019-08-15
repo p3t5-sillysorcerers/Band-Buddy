@@ -14,7 +14,14 @@ export default {
     return axios.delete("/api/profiles/" + id);
   },
   // Saves a profiles to the database
-  saveProfiles: function(profileData) {
-    return axios.post("/api/profiles", profileData);
+  inputProfiles: function(profileData) {
+    console.log(profileData);
+    return axios.post('/api/profiles', profileData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+  })
+  
+    // return axios.post("/api/profiles", profileData);
   }
 };

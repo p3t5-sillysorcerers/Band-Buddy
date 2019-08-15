@@ -1,21 +1,28 @@
 import React from 'react';
 import "./style.css"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const NavBar = () => (
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
+<nav className="navbar navbar-inverse">
+  <div className="container-fluid">
+    <div className="navbar-header">
       <img src="https://i.imgur.com/Psb5bVc.png" id="navLogo"></img>
-      {/* <a class="navbar-brand" href="#">Band Buddy</a> */}
+      {/* <a className="navbar-brand" href="#">Band Buddy</a> */}
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Search</a></li>
+    <ul className="nav navbar-nav">
+      <Link to="/home"style={{color: "orange", height: "16px", padding: "25px"}}
+      >Home</Link>
+      {/* <br></br>
+      <Link to="/create">Create profile</Link> */}
+      {/* <br></br> */}
+      <Link to="/profile"style={{color: "orange", height: "16px", padding: "25px", paddingTop: "15px"}}
+      >My Profile</Link>
+            <Link to="/activeusers"style={{color: "orange", height: "16px", paddingLeft: "25px", paddingTop: "15px"}}
+      >Active Users</Link>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <ul className="nav navbar-nav navbar-right">
+    <li><Link to="/"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
     </ul>
   </div>
 </nav>

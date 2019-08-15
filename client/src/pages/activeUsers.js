@@ -1,40 +1,59 @@
 import React, { Component } from "react";
-import UserCard from '../components/User Profile Card/'
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
+// import UserCard from '../components/User Profile Card/'
+import CardBody from '../components/User Profile Card/Card Body'
+import axios from "axios";
+import Profile from './profile';
 
 
 
 class ActiveUsers extends Component {
+
+    state = {
+        profiles: [],
+    };
+
+    componentDidMount() {
+        axios.get("api/profiles")
+            .then(response => {
+                
+                this.setState({
+                    profiles: response.data
+                })
+            })
+    }
+
     render() {
 
-       
-
         return (
-            <div className="activeUsers">
-                <div className="users">
-                    <h2>This is going to be the active users page!</h2>
-                    <div className="row">
-                        <div className="col-sm-3">
-
-                        </div>
-                        <div className="col-sm-6">
-                            <UserCard />
-                            <UserCard />
-                            <UserCard />
-                            <UserCard />
-                        </div>
-                        <div className="col-sm-3">
-
+            <>
+                <div className="activeUsers">
+                    <div className="users">
+                        <div className="row">
+                            <div className="col-sm-4">
+                                <Profile/>
+                            </div>
+                            <div className="col-sm-8">
+                                {this.state.profiles.map((profile,i) => {
+                                        console.log('profile in .map ???', profile);
+                                    
+                                    return (
+                                        <CardBody
+                                            name={profile.name}
+                                            username={profile.userName}
+                                            location={profile.location}
+                                            instrument={profile.instrument}
+                                            key={i}
+                                        />
+                                    )
+                                })
+                            }
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
-
-
-
 }
 
-export default ActiveUsers;
+    export default ActiveUsers;

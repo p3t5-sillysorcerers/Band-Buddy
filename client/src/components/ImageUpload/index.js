@@ -1,21 +1,23 @@
 import React from "react";
 import './style.css'
 
-
 class ImageUpload extends React.Component {
     constructor(props) {
         super(props);
         this.state = { file: '', imagePreviewUrl: '' };
     }
 
+    
+
     handleSubmit(event) {
         event.preventDefault();
     }
-    _handleImageChange(e) {
-        e.preventDefault();
+
+    handleImageChange(event) {
+        event.preventDefault();
 
         let reader = new FileReader();
-        let file = e.target.files[0];
+        let file = event.target.files[0];
 
         reader.onloadend = () => {
             this.setState({
@@ -24,6 +26,8 @@ class ImageUpload extends React.Component {
             });
         }
         reader.readAsDataURL(file)
+
+        this.props.data(file);
     }
     render() {
         let { imagePreviewUrl } = this.state;
@@ -39,13 +43,10 @@ class ImageUpload extends React.Component {
                 <div className="imgPlaceholder">
                 <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png" className="card-image" alt="..."></img>
                 </div>
-                <form onSubmit={(e) => this._handleSubmit(e)}>
+                <form onSubmit={(event) => this.handleSubmit(event)}>
                     <input className="fileInput" id="fileInput"
                         type="file"
-                        onChange={(e) => this._handleImageChange(e)} />
-                    <button className="submitButton"
-                        type="submit"
-                        onClick={(e) => this._handleSubmit(e)}>Upload Image</button>
+                        onChange={(event) => this.handleImageChange(event)} />
                 </form>
                 <div className="imgPreview">
                     {$imagePreview}
@@ -54,5 +55,7 @@ class ImageUpload extends React.Component {
         )
     }
 }
+
+
 
 export default ImageUpload;
