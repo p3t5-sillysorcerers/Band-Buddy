@@ -8,6 +8,7 @@ class InputData extends Component {
   state = {
     name: "",
     userName: "",
+    password: "",
     location: "",
     instrument: "",
     skillLevel: "",
@@ -34,7 +35,7 @@ class InputData extends Component {
       location: this.state.location,
       instrument: this.state.instrument,
       skillLevel: this.state.skillLevel,
-      musicGenres: this.state.musicGenres,  
+      musicGenres: this.state.musicGenres,
       image: this.state.file
     })
       .then(response => {
@@ -43,10 +44,10 @@ class InputData extends Component {
   };
 
   //Image file Added
-  handlePhoto(file){
+  handlePhoto(file) {
     console.log(this.state.file);
     this.setState({
-      file:file
+      file: file
     })
   };
 
@@ -70,6 +71,11 @@ class InputData extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.userName} />
               <Input
+                name="password"
+                placeholder="password (required)"
+                onChange={this.handleInputChange}
+                value={this.state.password} />
+              <Input
                 name="location"
                 placeholder="location"
                 onChange={this.handleInputChange}
@@ -92,7 +98,7 @@ class InputData extends Component {
             </form>
           </div>
           <div className="col-sm-4">
-            <ProfileUploadImage data={this.handlePhoto.bind(this)}  />
+            <ProfileUploadImage data={this.handlePhoto.bind(this)} />
           </div>
           <div className="col-sm-4"></div>
         </div>

@@ -10,8 +10,8 @@ const NavBar = () => (
       <img src="https://i.imgur.com/Psb5bVc.png" id="navLogo"></img>
       {/* <a className="navbar-brand" href="#">Band Buddy</a> */}
     </div>
-    <ul class="nav navbar-nav">
-      <Link to="/"style={{color: "orange", height: "16px", padding: "25px"}}
+    <ul className="nav navbar-nav">
+      <Link to="/home"style={{color: "orange", height: "16px", padding: "25px"}}
       >Home</Link>
       {/* <br></br>
       <Link to="/create">Create profile</Link> */}
@@ -22,7 +22,7 @@ const NavBar = () => (
       >Active Users</Link>
     </ul>
     <ul className="nav navbar-nav navbar-right">
-    <Link to="/"><li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li></Link>
+    <li><Link to="/"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
     </ul>
   </div>
 </nav>

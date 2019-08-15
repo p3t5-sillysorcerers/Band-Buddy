@@ -9,7 +9,8 @@ class Profile extends Component {
         profile: []
     };
    
-    // Loads one  Profile in the DB
+    // Loads one Profile in the DB
+    //replace window.location.pathname --> username from passport ********
     componentDidMount(){
         axios.get(`${"/api/profiles" + window.location.pathname}`)
         .then(response =>{
