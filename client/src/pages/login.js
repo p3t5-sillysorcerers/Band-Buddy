@@ -25,7 +25,8 @@ const Login = (props) => {
                   onChange={props.handleInput}
                   type="password"
                 />
-                <input className="btn-lg btn-primary" type="submit" value="Log In" onClick={props.loginHandler}/>          </div>
+                <input className="btn-lg btn-primary" type="submit" value="Log In" onClick={props.loginHandler}/>  
+                <input className="btn-lg btn-primary" type="submit" value="Create Profile" onClick={props.loginHandler}/>         </div>
         </div>
   
 
