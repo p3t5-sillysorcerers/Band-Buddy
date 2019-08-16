@@ -19,7 +19,7 @@ class Profile extends Component {
     //replace window.location.pathname --> username from passport ********
     componentDidMount(){
         //if authenticated then
-        axios.get(`${"/api/profiles" + window.location.pathname}`)
+        axios.get(`${"/api/profile" + window.location.pathname}`)
         .then(response =>{
         this.setState({
           profile:response.data
@@ -35,8 +35,7 @@ class Profile extends Component {
                 <div className="userProfile">
                     <div className="row">
                         <ProfImage />
-                        <ListGroup>
-                        <ul>
+                        {/* <ul>
                             <li>
                                 <strong>Name:</strong> {this.props.name}
                             </li>
@@ -55,9 +54,8 @@ class Profile extends Component {
                             <li>
                                 <strong>Music Genre:</strong> {this.props.musicGenres}
                             </li>
-                        </ul>
+                        </ul> */}
                             <Button>Edit Profile</Button>
-                        </ListGroup>
                     </div>
 
                 </div>

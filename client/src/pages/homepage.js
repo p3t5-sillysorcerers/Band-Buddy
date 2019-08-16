@@ -12,7 +12,8 @@ class homepage extends Component {
                 <p class="lead">Create a profile, add your instrument, and hook up with musicians in your neighborhood.</p>
 
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="/" role="button">Log in or create an account</a>
+                    <a class="btn btn-primary btn-lg" href="/login" role="button">Log in </a>
+                    <a class="btn btn-primary btn-lg" href="/create" role="button">Create an Account </a>
                 </p>
 
             </div>

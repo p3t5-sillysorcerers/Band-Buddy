@@ -11,7 +11,7 @@ const NavBar = () => (
       {/* <a className="navbar-brand" href="#">Band Buddy</a> */}
     </div>
     <ul className="nav navbar-nav">
-      <Link to="/home"style={{color: "orange", height: "16px", padding: "25px"}}
+      <Link to="/"style={{color: "orange", height: "16px", padding: "25px"}}
       >Home</Link>
       {/* <br></br>
       <Link to="/create">Create profile</Link> */}
@@ -22,7 +22,7 @@ const NavBar = () => (
       >Active Users</Link>
     </ul>
     <ul className="nav navbar-nav navbar-right">
-    <li><Link to="/"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+    <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
     </ul>
   </div>
 </nav>

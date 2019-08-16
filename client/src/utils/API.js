@@ -21,7 +21,14 @@ export default {
         'Content-Type': 'multipart/form-data'
       }
   })
-  
+    // return axios.post("/api/profiles", profileData);
+  },
+  register: function(profileData) {
+    console.log(profileData);
+    return axios.post('/api/user/register', profileData).then(response => {
+      console.log("Response for register" , response)
+    })
+    
     // return axios.post("/api/profiles", profileData);
   }
 };

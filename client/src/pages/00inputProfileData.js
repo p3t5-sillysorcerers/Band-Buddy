@@ -7,7 +7,7 @@ import API from "../utils/API";
 class InputData extends Component {
   state = {
     name: "",
-    userName: "",
+    username: "",
     password: "",
     location: "",
     instrument: "",
@@ -29,9 +29,10 @@ class InputData extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("clicked", this.state)
-    API.inputProfiles({
+    API.register({
       name: this.state.name,
-      userName: this.state.userName,
+      username: this.state.username,
+      password: this.state.password,
       location: this.state.location,
       instrument: this.state.instrument,
       skillLevel: this.state.skillLevel,
@@ -66,10 +67,10 @@ class InputData extends Component {
                 onChange={this.handleInputChange}
                 value={this.state.name} />
               <Input
-                name="userName"
+                name="username"
                 placeholder="username (required)"
                 onChange={this.handleInputChange}
-                value={this.state.userName} />
+                value={this.state.username} />
               <Input
                 name="password"
                 placeholder="password (required)"

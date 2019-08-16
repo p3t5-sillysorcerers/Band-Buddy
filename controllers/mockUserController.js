@@ -32,7 +32,7 @@ const userController = {
     if (!user.username) {
       return response.status(422).json({
         errors: {
-          userName: "is required"
+          username: "is required"
         }
       });
     }
