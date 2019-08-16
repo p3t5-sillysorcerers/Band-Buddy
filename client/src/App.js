@@ -60,6 +60,7 @@ class App extends Component {
     event.preventDefault();
     axios.post("/api/user/login", { "username": this.state.username, "password": this.state.password })
       .then(response => {
+        console.log(response.data);
         this.setState({
           user: response.data,
           loggedIn: true,
