@@ -53,36 +53,6 @@ class App extends Component {
     })
   }
 
-  // login = event => {
-  //   console.log("LOGGING IN")
-  //   event.preventDefault();
-  //   axios.post("/api/user/login", { "username": this.state.username, "password": this.state.password })
-  //     .then(response => {
-  //       console.log(response.data);
-  //       this.setState({
-  //         user: response.data,
-  //         loggedIn: true,
-  //         username: "",
-  //         password: "",
-  //         errorMessage: "",
-  //         test: ""
-  //       })
-  //       if (true) {
-  //         <Redirect to="/profile" />
-  //       }
-  //       // this.props.Router.push("profile")
-
-  //     })
-  //     .catch(error => {
-  //       console.log("LOGIN ERROR")
-  //       this.setState({
-  //         user: {},
-  //         logginId: false,
-  //         errorMessage: "Error logging in"
-  //       })
-  //     })
-  // }
-
   logout = event => {
     event.preventDefault();
     axios.post("/api/user/logout")
@@ -96,7 +66,6 @@ class App extends Component {
       })
   }
   
-
   render() {
    const login = event => {
       console.log("LOGGING IN")
@@ -116,7 +85,6 @@ class App extends Component {
             return <Redirect to="/profile" />;
             
           }
-          // this.props.Router.push("profile")
   
         })
         .catch(error => {
@@ -151,11 +119,6 @@ class App extends Component {
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
             <Route component={withRouter(Login)} />
-            {/* <Route exact path="/login" render={() => <Login {...(<Redirect to="/profile"/>)}/>}/> */}
-            {/* <Switch>
-          <Redirect from='/login' to='/profile'/>
-           <Route path='/profile' component={Profile}/>
-          </Switch> */}
           </Switch>
 <Footer />
         </div>
