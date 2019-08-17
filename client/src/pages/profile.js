@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron, ListGroup, Card} from "react-bootstrap"
+import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron, ListGroup, Card, Nav} from "react-bootstrap"
 import ProfileInfo from '../components/Profile Info';
 import ProfImage from '../components/User Profile Card/Card Image';
 // import ListGroup from "react-bootstrap/ListGroup";
@@ -34,8 +34,9 @@ class Profile extends Component {
             <>
             <NavBar />
             <Container>
-
+            <Jumbotron>
   <Row>
+    
     <Col sm={2}> <ProfImage />
     </Col>
     <Col sm={10}>
@@ -51,7 +52,9 @@ class Profile extends Component {
   </Card.ImgOverlay>
 </Card>
 </Col>
+
   </Row>
+  </Jumbotron> 
   <Row>
     <Col sm={2}><Card >
   <Card.Header>Featured</Card.Header>
@@ -61,36 +64,30 @@ class Profile extends Component {
     <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
   </ListGroup>
 </Card></Col>
-    <Col sm={10}><Form>
-  <Form.Group controlId="exampleForm.ControlInput1">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="name@example.com" />
-  </Form.Group>
-  <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Label>Example select</Form.Label>
-    <Form.Control as="select">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group>
-  <Form.Group controlId="exampleForm.ControlSelect2">
-    <Form.Label>Example multiple select</Form.Label>
-    <Form.Control as="select" multiple>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-  </Form.Group>
-  <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Example textarea</Form.Label>
-    <Form.Control as="textarea" rows="3" />
-  </Form.Group>
-</Form></Col>
+    <Col sm={10}><Card>
+  <Card.Header>
+    <Nav variant="tabs" defaultActiveKey="#first">
+      <Nav.Item>
+        <Nav.Link href="#first">Active</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="#link">Link</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="#disabled" disabled>
+          Disabled
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
+  </Card.Header>
+  <Card.Body>
+    <Card.Title>Special title treatment</Card.Title>
+    <Card.Text>
+      With supporting text below as a natural lead-in to additional content.
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card></Col>
   </Row>
 </Container>
 
