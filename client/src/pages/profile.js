@@ -31,6 +31,8 @@ class Profile extends Component {
     render() {
 
         return (
+            <>
+            <NavBar />
             <div className="container profilestyling">
                 <div className="userProfile">
                     <div className="row">
@@ -60,6 +62,8 @@ class Profile extends Component {
 
                 </div>
             </div>
+          <Footer />  
+          </>
         )
     }
 }

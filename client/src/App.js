@@ -6,9 +6,8 @@ import homepage from './pages/homepage';
 import ActiveUsers from './pages/activeUsers';
 import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import AllData from './pages/00allProfileData';
+import Footer from './components/Footer';
 import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
 import UploadImage from './pages/imageUploader'
@@ -69,6 +68,7 @@ class App extends Component {
           errorMessage: "",
           test: ""
         })
+        // this.props.Router.push("profile")
       })
       .catch(error => {
         console.log("LOGIN ERROR")
@@ -91,6 +91,7 @@ class App extends Component {
         })
       })
   }
+
   render() {
     return (
 
@@ -102,7 +103,6 @@ class App extends Component {
       }}>
       <Router>
         <div>
-          <NavBar />
           <Switch>
             <Route exact path="/" component={homepage} />
             {/* <Route exact path="/" component={() => <Login loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} /> */}
@@ -116,14 +116,10 @@ class App extends Component {
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
           </Switch>
-          <Footer />
+<Footer />
         </div>
       </Router>
        </IdentityContext.Provider>
-
-
-
-
     );
   }
 }

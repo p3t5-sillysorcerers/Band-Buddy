@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import UserCard from '../components/User Profile Card/'
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 import CardBody from '../components/User Profile Card/Card Body'
 import axios from "axios";
 import Profile from './profile';
@@ -26,11 +27,13 @@ class ActiveUsers extends Component {
 
         return (
             <>
+<NavBar 
+username={"kevin"}
+/>
                 <div className="activeUsers">
                     <div className="users">
                         <div className="row">
                             <div className="col-sm-4">
-                                <Profile/>
                             </div>
                             <div className="col-sm-8">
                                 {this.state.profiles.map((profile,i) => {
@@ -51,6 +54,7 @@ class ActiveUsers extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </>
         );
     }
