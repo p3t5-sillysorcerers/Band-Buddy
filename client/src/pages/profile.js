@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron, ListGroup, Card} from "react-bootstrap"
 import ProfileInfo from '../components/Profile Info';
 import ProfImage from '../components/User Profile Card/Card Image';
-import ListGroup from "react-bootstrap/ListGroup";
+// import ListGroup from "react-bootstrap/ListGroup";
 import axios from 'axios';
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import "./profile.css";
 
 
@@ -29,14 +30,76 @@ class Profile extends Component {
         };
 
     render() {
-
         return (
             <>
             <NavBar />
+            <Container>
+
+  <Row>
+    <Col sm={2}> <ProfImage />
+    </Col>
+    <Col sm={10}>
+    <Card className="bg-light text-white">
+  <Card.Img src="https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2018/03/03103805/big-concert-audience-listening-to-music-at-festival-picture-id485343244.jpg" alt="Card image" />
+  <Card.ImgOverlay>
+    <Card.Title>Card title</Card.Title>
+    <Card.Text>
+      This is a wider card with supporting text below as a natural lead-in to
+      additional content. This content is a little bit longer.
+    </Card.Text>
+    <Card.Text>Last updated 3 mins ago</Card.Text>
+  </Card.ImgOverlay>
+</Card>
+</Col>
+  </Row>
+  <Row>
+    <Col sm={2}><Card >
+  <Card.Header>Featured</Card.Header>
+  <ListGroup variant="flush">
+    <ListGroup.Item>Cras justo odio</ListGroup.Item>
+    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+  </ListGroup>
+</Card></Col>
+    <Col sm={10}><Form>
+  <Form.Group controlId="exampleForm.ControlInput1">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" placeholder="name@example.com" />
+  </Form.Group>
+  <Form.Group controlId="exampleForm.ControlSelect1">
+    <Form.Label>Example select</Form.Label>
+    <Form.Control as="select">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </Form.Control>
+  </Form.Group>
+  <Form.Group controlId="exampleForm.ControlSelect2">
+    <Form.Label>Example multiple select</Form.Label>
+    <Form.Control as="select" multiple>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </Form.Control>
+  </Form.Group>
+  <Form.Group controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Example textarea</Form.Label>
+    <Form.Control as="textarea" rows="3" />
+  </Form.Group>
+</Form></Col>
+  </Row>
+</Container>
+
             <div className="container profilestyling">
                 <div className="userProfile">
                     <div className="row">
-                        <ProfImage />
+                       
+
+
                         {/* <ul>
                             <li>
                                 <strong>Name:</strong> {this.props.name}
@@ -57,7 +120,7 @@ class Profile extends Component {
                                 <strong>Music Genre:</strong> {this.props.musicGenres}
                             </li>
                         </ul> */}
-                            <Button>Edit Profile</Button>
+                        
                     </div>
 
                 </div>
