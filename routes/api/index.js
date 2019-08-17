@@ -4,7 +4,7 @@ const userRoutes = require("./user");
 
 
 // Profile routes
-router.use("/profiles", dataRoutes);
+router.use("/profile", dataRoutes);
 
 router.use("/user", userRoutes);
 
