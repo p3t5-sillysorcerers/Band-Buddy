@@ -112,9 +112,8 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/activeusers" component={ActiveUsers} />
             <Route exact path="/data" component={AllData} />
-            <Route exact path="/input" component={InputData} />
+            <Route exact path="/input" component={UploadImage} />
             <Route exact path="/:userName" component={ProfileData} />
-            {/* <Route exact path="/uploader" component={UploadImage}/> */}
             <Route component={NotFound} />
           </Switch>
           <Footer />
