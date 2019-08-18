@@ -104,9 +104,9 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={homepage} />
+            <Route exact path="/" render={(props) => <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
             {/* <Route exact path="/" component={() => <Login loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} /> */}
-            <Route exact path="/login" render={(props) => <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
+            {/* <Route exact path="/login" render={(props) => <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} /> */}
             <Route exact path="/chat" component={ChatPage} />
             <Route exact path="/create" render={(props) => <Create {...props} inputProfiles={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
             <Route exact path="/profile" component={Profile} />
