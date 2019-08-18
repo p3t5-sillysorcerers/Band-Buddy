@@ -1,4 +1,5 @@
 import React from "react";
+import { Button} from "react-bootstrap"
 import './style.css'
 
 const user = {
@@ -32,8 +33,8 @@ render() {
                 </ul>
             </div>
             <div className="buttonDiv">
-                <a href="#" className="btn btn-primary">Contact Me</a>
-                <button type="button" class="btn btn-success">Available</button>
+                {/* <a href="#" className="btn btn-primary mr-1">Contact Me</a> */}
+                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick(this.props.name)}>Jam with me</button>
             </div>
     </div>
 
