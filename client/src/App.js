@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter, Redirect } from "react-router-dom";
 import Profile from './pages/profile';
 import Login from './pages/login';
 import homepage from './pages/homepage';
@@ -17,7 +17,6 @@ import "./App.css";
 import ChatPage from './pages/ChatPage';
 // import Signup from './components/SignUp/Signup';
 // import { default as Chatkit } from '@pusher/chatkit-server';
-
 import axios from "axios";
 import { IdentityContext } from "./identity-context";
 import Nav from "./Nav"
@@ -54,32 +53,6 @@ class App extends Component {
     })
   }
 
-  login = event => {
-    console.log("LOGGING IN")
-    event.preventDefault();
-    axios.post("/api/user/login", { "username": this.state.username, "password": this.state.password })
-      .then(response => {
-        console.log(response.data);
-        this.setState({
-          user: response.data,
-          loggedIn: true,
-          username: "",
-          password: "",
-          errorMessage: "",
-          test: ""
-        })
-        // this.props.Router.push("profile")
-      })
-      .catch(error => {
-        console.log("LOGIN ERROR")
-        this.setState({
-          user: {},
-          logginId: false,
-          errorMessage: "Error logging in"
-        })
-      })
-  }
-
   logout = event => {
     event.preventDefault();
     axios.post("/api/user/logout")
@@ -89,10 +62,40 @@ class App extends Component {
           user: {},
           loggedIn: false
         })
+        
       })
   }
-
+  
   render() {
+   const login = event => {
+      console.log("LOGGING IN")
+      event.preventDefault();
+      axios.post("/api/user/login", { "username": this.state.username, "password": this.state.password })
+        .then(response => {
+          console.log(response.data);
+          this.setState({
+            user: response.data,
+            loggedIn: true,
+            username: "",
+            password: "",
+            errorMessage: "",
+            test: ""
+          })
+          if (true) {
+            return <Redirect to="/profile" />;
+            
+          }
+  
+        })
+        .catch(error => {
+          console.log("LOGIN ERROR")
+          this.setState({
+            user: {},
+            logginId: false,
+            errorMessage: "Error logging in"
+          })
+        })
+    }
     return (
 
       <IdentityContext.Provider value={{
@@ -115,6 +118,7 @@ class App extends Component {
             <Route exact path="/input" component={UploadImage} />
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
+            <Route component={withRouter(Login)} />
           </Switch>
 <Footer />
         </div>

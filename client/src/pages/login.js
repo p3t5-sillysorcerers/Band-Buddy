@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./Login.css"
 
+
 const Login = (props) => {
     return (
       // <div class="container col-4"></div>
@@ -46,7 +47,7 @@ const Login = (props) => {
                   type="password"
       />
     </InputGroup>
-    <Button type="submit" href="/profiles"value="Log In" onClick={props.loginHandler} >Log In</Button>
+    <Button type="submit" href="/profile"value="Log In" onClick={props.loginHandler} >Log In</Button>
     
   </Form>
 </Navbar>
@@ -56,10 +57,10 @@ const Login = (props) => {
 <Jumbotron>
 <Container>
   <Row>
-    <Col sm={12}><h1 class="display-4">Band Buddy! Find music buds in your area!</h1></Col>
+    <Col sm={12}><h1 className="display-4">Band Buddy! Find music buds in your area!</h1></Col>
   </Row>
   <Row>
-    <Col sm={12}>  <p class="lead">Create a profile, add your instrument, and hook up with musicians in your neighborhood.</p></Col>
+    <Col sm={12}>  <p className="lead">Create a profile, add your instrument, and hook up with musicians in your neighborhood.</p></Col>
   </Row>
   <Row>
   <Col sm ={2}> 
