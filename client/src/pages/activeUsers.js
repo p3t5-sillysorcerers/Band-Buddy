@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import CardBody from '../components/User Profile Card/Card Body'
+import  JamList from "../components/ListGroup"
 import axios from "axios";
 import Profile from './profile';
+
 // import listgroup from '../components/ListGroup';
 import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import './activeusers.css';
@@ -29,14 +31,33 @@ class ActiveUsers extends Component {
     onClick = (e) => {
         this.setState({ inputValue: e})
         console.log(e)
+        console.log(this.state)
+        this.addToArray()
+        // const { inputValue, musicians } = this.state;
+        // if (inputValue) {
+        //   const nextState = [...musicians, inputValue];
+        //   this.setState({ musicians: nextState, inputValue: '' });
+        // }
+      }
+    
+    addToArray(){
+        // let remove = this.state.profiles.map(function(item) { return item.value; }).indexOf(e.target.value);
         const { inputValue, musicians } = this.state;
         if (inputValue) {
           const nextState = [...musicians, inputValue];
-          this.setState({ musicians: nextState, inputValue: '' });
-        }
-       
-      }
-    
+          this.setState({ 
+              
+            musicians: nextState, 
+            inputValue: '', 
+            // profiles: this.state.profiles.filter((_, i) => i !== remove)
+        
+        });
+        
+    }
+     console.log(this.state.musicians[0])
+}
+
+
     render() {
         return (
             <>
@@ -45,19 +66,13 @@ class ActiveUsers extends Component {
                     <div className="users">
                         <div className="row">
                             <div className="col-sm-4 group">
-                                <ListGroup>
-                                    <ListGroup.Item>Bandy Buddy 1</ListGroup.Item>
-                                    <ListGroup.Item>Band Buddy 2</ListGroup.Item>
-                                    <ListGroup.Item>Band Buddy 3</ListGroup.Item>
-                                    <ListGroup.Item>Band Buddy 4</ListGroup.Item>
+                            <ListGroup>
+                                <JamList musicians={this.state.musicians} />
+                                <Button variant="warning" className="jambutton">Let's Jam</Button> 
                                 </ListGroup>
-                                <Button variant="warning" className="jambutton">Let's Jam</Button>
-
                             </div>
                             <div className="col-sm-8">
                                 {this.state.profiles.map((profile,i) => {
-                                        // console.log('profile in .map ???', profile);
-                                    
                                     return (
                                         <CardBody
                                             name={profile.name}
@@ -81,3 +96,7 @@ class ActiveUsers extends Component {
 }
 
     export default ActiveUsers;
+
+
+    // ListGroup
+    // ListGroup.Item

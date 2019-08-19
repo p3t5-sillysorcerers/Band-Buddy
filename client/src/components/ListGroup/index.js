@@ -1,22 +1,17 @@
 import React, { Component } from "react";
 // import './style.css';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
 
-class list extends Component{
+function JamList(props) {
+    const musicians = props.musicians;
+    const listItems = musicians.map((musicians) =>
+      <ListGroupItem>{musicians}</ListGroupItem>
+    );
+    return (
+      <ul>{listItems}</ul>
+    );
+    
+  }
 
-    render(){
-        return(
-
-            <ListGroup>
-                <ListGroup.Item>Band Buddy 1</ListGroup.Item>
-                <ListGroup.Item>Band Buddy 2</ListGroup.Item>
-                <ListGroup.Item>Band Buddy 3</ListGroup.Item>
-                <ListGroup.Item>Band Buddy 4</ListGroup.Item>
-            </ListGroup>
-        )
-    }
-
-}
-
-export default ListGroup;
+export default  JamList;
