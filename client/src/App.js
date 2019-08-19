@@ -19,7 +19,7 @@ import ChatPage from './pages/ChatPage';
 // import { default as Chatkit } from '@pusher/chatkit-server';
 
 import axios from "axios";
-import { IdentityContext } from "./identity-context";
+import  IdentityContext  from "./identity-context";
 import Nav from "./Nav"
 import User from "./User"
 
@@ -125,7 +125,7 @@ class App extends Component {
             <Route exact path="/" component={homepage} />
             {/* <Route exact path="/" component={() => <Login loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} /> */}
             <Route exact path="/login" render={(props) => loggedIn ? ( 
-              <Redirect to="/profile"/>
+              <Redirect to="/profile" render={(props) => <Profile {...props}  username={this.state.username}/>}/>
             ):(
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
             )
