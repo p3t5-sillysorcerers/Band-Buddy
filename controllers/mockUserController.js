@@ -6,6 +6,12 @@ const userController = {
   getAuthenticatedUser: (request, response) => {
     console.log("Authenticated User", request.user);
     response.json(request.user);
+    console.log("Data we need" + req.params.userName)
+    // db.Profiles
+      // .findOne({username: `${req.params.username}`})
+      // .then(dbModel => res.json(dbModel))
+      // .catch(err => res.status(422).json(err));
+
   },
   login: (request, response) => {
     console.log("UserController.login", request.user);
