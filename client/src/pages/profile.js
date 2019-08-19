@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import IdentityContext from '../../src/identity-context';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron, ListGroup, Card, Nav} from "react-bootstrap"
-import ProfileInfo from '../components/Profile Info';
+// import ProfileInfo from '../components/Profile Info';
 import ProfImage from '../components/User Profile Card/Card Image';
 // import ListGroup from "react-bootstrap/ListGroup";
 import axios from 'axios';
@@ -10,26 +11,27 @@ import axios from 'axios';
 import "./profile.css";
 
 
-class Profile extends Component {
+function Profile(){
 
-    state = {
-        profile: []
-    };
+    // state = {
+    //     profile: []
+    // };
    
     // Loads one Profile in the DB
     //replace window.location.pathname --> username from passport ********
-    componentDidMount(){
-        //if authenticated then
-        axios.get(`${"/api/profile" + window.location.pathname}`)
-        .then(response =>{
-        this.setState({
-          profile:response.data
-        })
-        console.log(this.state)
-        })
-        };
+    // componentDidMount(){
+        // //if authenticated then
+        // axios.get(`${"/api/profile" + window.location.pathname}`)
+        // .then(response =>{
+        // this.setState({
+        //   profile:response.data
+        // })
+        // console.log(this.state)
+        // })
+        // };
 
-    render() {
+      const value = useContext(IdentityContext);
+      console.log(value);
         return (
             <>
             <NavBar />
@@ -126,7 +128,7 @@ class Profile extends Component {
           </>
         )
     }
-}
+
 
 export default Profile;
 
