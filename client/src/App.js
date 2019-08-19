@@ -44,15 +44,7 @@ class App extends Component {
     //       })
     //     }
     //   })
-    axios.get(`${"/api/profile" + "/Kevin"}`)
-        .then(response =>{
-        this.setState({
-          profile:response.data
-        })
-        console.log(response)
-        })
-        };
-
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;

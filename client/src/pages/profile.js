@@ -50,7 +50,7 @@ function Profile(){
     <Card.Text>
       <User></User>
     </Card.Text>
-    <Card.Text>Last updated 3 mins ago</Card.Text>
+    <Card.Text>Last updated 1 mins ago</Card.Text>
   </Card.ImgOverlay>
 </Card>
 </Col>
