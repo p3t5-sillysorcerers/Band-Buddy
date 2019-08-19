@@ -6,7 +6,7 @@ import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 function JamList(props) {
     const musicians = props.musicians;
     const listItems = musicians.map((musicians) =>
-      <ListGroupItem>{musicians}</ListGroupItem>
+      <ListGroup.Item>{musicians}</ListGroup.Item>
     );
     return (
       <ul>{listItems}</ul>

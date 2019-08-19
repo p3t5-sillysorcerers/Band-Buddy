@@ -34,7 +34,7 @@ render() {
             </div>
             <div className="buttonDiv">
                 {/* <a href="#" className="btn btn-primary mr-1">Contact Me</a> */}
-                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick(this.props.name)}>Jam with me</button>
+                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick(this.props.name + ": " + this.props.instrument)}>Jam with me</button>
             </div>
     </div>
 

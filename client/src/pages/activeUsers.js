@@ -25,37 +25,18 @@ class ActiveUsers extends Component {
                 this.setState({
                     profiles: response.data
                 })
+                console.log(response.data)
             })
     }
 
     onClick = (e) => {
-        this.setState({ inputValue: e})
+        this.setState({inputValue: e})
         console.log(e)
-        console.log(this.state)
-        this.addToArray()
-        // const { inputValue, musicians } = this.state;
-        // if (inputValue) {
-        //   const nextState = [...musicians, inputValue];
-        //   this.setState({ musicians: nextState, inputValue: '' });
-        // }
+        this.setState({
+            musicians: [...this.state.musicians, e]
+          })
       }
     
-    addToArray(){
-        // let remove = this.state.profiles.map(function(item) { return item.value; }).indexOf(e.target.value);
-        const { inputValue, musicians } = this.state;
-        if (inputValue) {
-          const nextState = [...musicians, inputValue];
-          this.setState({ 
-              
-            musicians: nextState, 
-            inputValue: '', 
-            // profiles: this.state.profiles.filter((_, i) => i !== remove)
-        
-        });
-        
-    }
-     console.log(this.state.musicians[0])
-}
 
 
     render() {
@@ -79,7 +60,7 @@ class ActiveUsers extends Component {
                                             username={profile.userName}
                                             location={profile.location}
                                             instrument={profile.instrument}
-                                            key={i}
+                                            key={profile.key}
                                             onClick = {this.onClick}
                                         />
                                     )
