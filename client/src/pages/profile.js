@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { useContext } from "react";
 import IdentityContext from '../../src/identity-context';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -9,6 +9,8 @@ import ProfImage from '../components/User Profile Card/Card Image';
 import axios from 'axios';
 // import Button from "react-bootstrap/Button";
 import "./profile.css";
+import User from '../User'
+
 
 
 function Profile(){
@@ -37,18 +39,16 @@ function Profile(){
             <NavBar />
             <Container>
             <Jumbotron>
-  <Row>
-    
+  <Row>    
     <Col sm={2}> <ProfImage />
     </Col>
     <Col sm={10}>
-    <Card className="bg-light text-white">
+    <Card className="bg-light text-white" >
   <Card.Img src="https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2018/03/03103805/big-concert-audience-listening-to-music-at-festival-picture-id485343244.jpg" alt="Card image" />
   <Card.ImgOverlay>
-    <Card.Title>Card title</Card.Title>
+    <Card.Title></Card.Title>
     <Card.Text>
-      This is a wider card with supporting text below as a natural lead-in to
-      additional content. This content is a little bit longer.
+      <User></User>
     </Card.Text>
     <Card.Text>Last updated 3 mins ago</Card.Text>
   </Card.ImgOverlay>

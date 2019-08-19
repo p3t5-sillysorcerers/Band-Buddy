@@ -6,8 +6,11 @@ function User() {
     const identity = useContext(IdentityContext)
     
     return (
-            <div style={{width: 200, height: 200, backgroundColor: "darkBlue", color: "white"}}>
-                <h3>{identity.user.username}</h3>
+            <div>
+                <h1>{identity.user.username}</h1>
+                <h4> {identity.user.location}</h4>
+                <h5>{identity.user.instrument}</h5>
+
             </div>
     )
 }
