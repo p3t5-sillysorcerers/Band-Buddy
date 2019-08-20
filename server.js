@@ -2,6 +2,7 @@ const express = require("express");
 var session = require("express-session");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const passport = require("./controllers/passportController");

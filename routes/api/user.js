@@ -12,6 +12,10 @@ router
 
 router
     .route("/logout")
-    .post(userController.logout)
+    .post(userController.logout);
+
+router
+    .route("/register")
+    .post(userController.register);
 
 module.exports = router;

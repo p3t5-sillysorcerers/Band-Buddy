@@ -1,4 +1,4 @@
 module.exports = {
-    Profiles: require("./profiles")
+    Profiles: require("./profiles"),
+    Jams: require("./jams")
   };
-  
