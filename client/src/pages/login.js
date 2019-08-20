@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import NavBarHome from '../components/NavBarHome';
 import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron} from "react-bootstrap"
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 import "./Login.css"
 
 

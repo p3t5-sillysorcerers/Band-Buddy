@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { List, ListItem } from "../components/List";
+import { ListItem } from "../components/List";
 import axios from "axios";
-import API from "../utils/API";
 
 class Profile extends Component {
     // Initialize this.state.profiles as an empty array

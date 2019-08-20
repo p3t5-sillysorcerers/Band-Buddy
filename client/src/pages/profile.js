@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import IdentityContext from '../../src/identity-context';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import {Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron, ListGroup, Card, Nav} from "react-bootstrap"
+import { Button, Container, Col, Row, Jumbotron, ListGroup, Card, Nav} from "react-bootstrap"
 // import ProfileInfo from '../components/Profile Info';
 import ProfImage from '../components/User Profile Card/Card Image';
 // import ListGroup from "react-bootstrap/ListGroup";

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Navbar, Nav} from "react-bootstrap";
-import { BrowserRouter as Router, Route, Switch, Redirect, withRouter, Link } from "react-router-dom";
+import {Navbar} from "react-bootstrap";
+import { BrowserRouter as Route } from "react-router-dom";
 
 class NavBarHome extends React.Component {
 
