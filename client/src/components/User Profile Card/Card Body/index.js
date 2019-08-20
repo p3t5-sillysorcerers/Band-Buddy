@@ -33,8 +33,8 @@ render() {
                 </ul>
             </div>
             <div className="buttonDiv">
-                {/* <a href="#" className="btn btn-primary mr-1">Contact Me</a> */}
-                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick(this.props.name + ": " + this.props.instrument)}>Jam with me</button>
+                {/* <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick(this.props.name + ": " + this.props.instrument)}>Jam with me</button> */}
+                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name + ": " + this.props.instrument, username: this.props.username})}>Jam with me</button>
             </div>
     </div>
 

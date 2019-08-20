@@ -1,6 +1,9 @@
 import React from 'react';
 import {Navbar, Nav} from "react-bootstrap"
 
+//install react route and get the link from it 
+
+
 class NavBar extends React.Component {
 
     render() {
