@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, TextArea, FormBtn } from '../components/00inputProfileFrom';
+import { Input, FormBtn } from '../components/00inputProfileFrom';
 import ProfileUploadImage from "../components/ImageUpload";
 // import ReactUploadImage from "../components/uploadtest"
 import API from "../utils/API";

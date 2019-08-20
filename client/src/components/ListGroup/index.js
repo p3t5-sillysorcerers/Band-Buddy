@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import './style.css';
-import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 
 
 function JamList(props) {

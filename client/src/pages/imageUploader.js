@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import axios from "axios";
+// import axios from "axios";
 import API from "../utils/API";
 import FileBase64 from '../components/64image';
 
@@ -42,7 +42,7 @@ return (
       <img src="" />
     </div>
 
-    { this.state.files.length != 0 ?
+    { this.state.files.length !== 0 ?
       <div>
         <div className="pre-container">
           <pre>{ JSON.stringify(this.state.files[0].name, null, 2) }</pre>

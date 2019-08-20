@@ -2,26 +2,24 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from "react-router-dom";
 import Profile from './pages/profile';
 import Login from './pages/login';
-import homepage from './pages/homepage';
 import ActiveUsers from './pages/activeUsers';
 import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
 import AllData from './pages/00allProfileData';
 import Footer from './components/Footer';
-import InputData from './pages/00inputProfileData';
+// import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
 import UploadImage from './pages/imageUploader'
-import Bootstrap from "react-bootstrap";
+// import Bootstrap from "react-bootstrap";
 import "./App.css";
 // import ChatMessage from './components/Chat/ChatMessage';
 import ChatPage from './pages/ChatPage';
 // import Signup from './components/SignUp/Signup';
 // import { default as Chatkit } from '@pusher/chatkit-server';
-
 import axios from "axios";
 import  IdentityContext  from "./identity-context";
-import Nav from "./Nav"
-import User from "./User"
+// import Nav from "./Nav"
+// import User from "./User"
 
 class App extends Component {
 
@@ -122,8 +120,6 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={homepage} />
-            {/* <Route exact path="/" component={() => <Login loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} /> */}
             <Route exact path="/login" render={(props) => loggedIn ? ( 
               <Redirect to="/profile" render={(props) => <Profile {...props}  username={this.state.username}/>}/>
             ):(

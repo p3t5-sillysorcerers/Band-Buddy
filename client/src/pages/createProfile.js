@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InputData from './00inputProfileData';
-import {Navbar, InputGroup, Form, FormControl, Button, NavDropdown, Nav} from "react-bootstrap"
+import { Navbar } from "react-bootstrap"
 
 class Create extends Component{
 

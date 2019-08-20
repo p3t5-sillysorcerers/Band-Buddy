@@ -5,10 +5,7 @@ import CardBody from '../components/User Profile Card/Card Body'
 import JamList from "../components/ListGroup"
 import JamButton from "../components/Jambutton"
 import axios from "axios";
-import Profile from './profile';
-
-// import listgroup from '../components/ListGroup';
-import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { ListGroup, Button } from 'react-bootstrap';
 import './activeusers.css';
 
 class ActiveUsers extends Component {

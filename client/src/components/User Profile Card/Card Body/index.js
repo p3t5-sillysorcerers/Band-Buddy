@@ -1,5 +1,4 @@
 import React from "react";
-import { Button} from "react-bootstrap"
 import './style.css'
 
 const user = {
@@ -33,8 +32,12 @@ render() {
                 </ul>
             </div>
             <div className="buttonDiv">
+<<<<<<< HEAD
                 {/* <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick(this.props.name + ": " + this.props.instrument)}>Jam with me</button> */}
                 <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name + ": " + this.props.instrument, username: this.props.username})}>Jam with me</button>
+=======
+                <button id= {this.props.name} type="button" class="btn btn-success" onClick={()=>this.props.onClick(this.props.name + ": " + this.props.instrument)}>Jam with me</button>
+>>>>>>> df9778491af7854e820848879b06d9e779dd40c0
             </div>
     </div>
 
