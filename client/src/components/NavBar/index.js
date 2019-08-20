@@ -15,7 +15,7 @@ class NavBar extends React.Component {
   <Navbar bg="dark" variant="dark">
     <Navbar.Brand href="/login">Band Buddy</Navbar.Brand>
     <Nav className="mr-auto">
-      <Link to="profile">My Profile</Link>
+      <Link to="profile">My Profile</Link>{' '}
 
       <Link to="activeusers">Active Users</Link>
     </Nav>
