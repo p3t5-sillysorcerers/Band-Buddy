@@ -64,12 +64,13 @@ class App extends Component {
           username: "",
           password: "",
           errorMessage: "",
-          test: ""
+          test: "",
         })
         console.log(this.state.loggedIn)
         if (this.state.loggedIn === true) {
           console.log("IT WORKS!")
-          return  <Redirect to="/profile" />;
+          // return  <Redirect to="/profile" />;
+
             // this.props.Router.push("profile")
          
         }
@@ -84,6 +85,15 @@ class App extends Component {
       })
   }
 
+  logoutHandler = ()=>{
+    if(this.state.redirect === true){
+      this.setState({
+        redirect:false
+      })
+      return <Redirect to="/login"></Redirect>
+    }
+  }
+
   logout = event => {
     event.preventDefault();
     axios.post("/api/user/logout")
@@ -91,22 +101,15 @@ class App extends Component {
         this.setState({
           errorMessage: "",
           user: {},
-          loggedIn: false
-        })
+          loggedIn: false,
+          redirect: true
+        })      
       })
   }
 
   render() {
-    const loginRedirect = event => {
-      if (this.state.loggedIn === true) {
-        console.log("redirect event")
-        return <Redirect to="/profile" />;
-    }
-    // else (
-    //   return <Redirect to="/profile" />;
-    // )
-    }
 
+  
   const loggedIn = this.state.loggedIn
 
     return (
@@ -118,6 +121,7 @@ class App extends Component {
         logout: this.logout
       }}>
       <Router>
+        {this.logoutHandler()}
         <div>
           <Switch>
             <Route exact path="/login" render={(props) => loggedIn ? ( 
@@ -126,7 +130,6 @@ class App extends Component {
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
             )
           } />
-
             <Route exact path="/chat" component={ChatPage} />
             <Route exact path="/create" render={(props) => <Create {...props} inputProfiles={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
             <Route exact path="/profile" component={Profile} />

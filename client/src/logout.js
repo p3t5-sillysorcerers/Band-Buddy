@@ -1,19 +1,19 @@
 import React from "react";
 import  IdentityContext  from "./identity-context";
 
-class Nav extends React.Component {
+class Logout extends React.Component {
+
+    
     render() {
         return (
             <IdentityContext.Consumer>
-                {({user, logout}) => (
+                {({logout}) => (
                     <div>
-                        <span>{user.username}</span>
-                        <button onClick={logout}>Logout</button>
+                        <button className="btn btn-primary" onClick={logout}>Logout</button>
                     </div>
                 )}
             </IdentityContext.Consumer>
         )
     }
 }
-
-export default Nav;
+export default Logout;

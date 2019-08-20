@@ -1,6 +1,7 @@
 import React from 'react';
 import {Navbar, Nav} from "react-bootstrap";
 import { BrowserRouter as Router , Link } from "react-router-dom";
+import Logout from '../../logout';
 // import Profile from '../../pages/profile';
 // import ActiveUsers from '../../pages/activeUsers';
 // import Login from '../../pages/login';
@@ -22,7 +23,7 @@ class NavBar extends React.Component {
     <Navbar.Toggle />
   <Navbar.Collapse className="justify-content-end">
     <Navbar.Text>
-      Signed in as: <a href="#login"> {this.props.name} </a>
+      <Logout></Logout>
     </Navbar.Text>
   </Navbar.Collapse>
     </Navbar>
