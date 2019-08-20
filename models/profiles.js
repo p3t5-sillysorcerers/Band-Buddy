@@ -13,7 +13,7 @@ const profileSchema = new Schema({
   info: { type: String },
   location: { type: String },
   profileLinks: { type: String },
-  image: { data: Buffer, contentType: String  },
+  image: { type: String  },
   updated: { type: Date, default: Date.now }
 });
 

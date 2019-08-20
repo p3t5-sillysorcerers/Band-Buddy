@@ -9,6 +9,7 @@ const user = {
 
 class ProfImage extends React.Component {
 
+
 render() {
     return (
             <div className=" profile-img-container">

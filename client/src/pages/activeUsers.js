@@ -81,6 +81,7 @@ this.setState({
                                 {this.state.profiles.map((profile,i) => {
                                     return (
                                         <CardBody
+                                            image={profile.image}
                                             name={profile.name}
                                             username={profile.username}
                                             location={profile.location}

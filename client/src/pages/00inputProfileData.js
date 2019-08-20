@@ -3,6 +3,7 @@ import { Input, FormBtn } from '../components/00inputProfileFrom';
 import ProfileUploadImage from "../components/ImageUpload";
 // import ReactUploadImage from "../components/uploadtest"
 import API from "../utils/API";
+import axios from 'axios';
 
 class InputData extends Component {
   state = {
@@ -29,19 +30,27 @@ class InputData extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("clicked", this.state)
-    API.register({
-      name: this.state.name,
-      username: this.state.username,
-      password: this.state.password,
-      location: this.state.location,
-      instrument: this.state.instrument,
-      skillLevel: this.state.skillLevel,
-      musicGenres: this.state.musicGenres,
-      image: this.state.file
-    })
-      .then(response => {
-        console.log("Profile Added")
+    
+    axios.get('https://randomuser.me/api/').then(response =>{
+      var profileImage = response.data.results[0].picture.medium
+      console.log(profileImage);
+      API.register({
+        name: this.state.name,
+        username: this.state.username,
+        password: this.state.password,
+        location: this.state.location,
+        instrument: this.state.instrument,
+        skillLevel: this.state.skillLevel,
+        musicGenres: this.state.musicGenres,
+        image: profileImage
       })
+        .then(response => {
+          console.log(response)
+          window.location = "/login"
+        })
+    })
+
+    
   };
 
   //Image file Added
