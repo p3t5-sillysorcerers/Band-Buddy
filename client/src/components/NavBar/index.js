@@ -1,15 +1,19 @@
 import React from 'react';
-import {Navbar, Nav} from "react-bootstrap"
+import {Navbar, Nav} from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter, Link } from "react-router-dom";
+import Profile from '../../pages/profile';
+import ActiveUsers from '../../pages/activeUsers';
+import Login from '../../pages/login';
 
 class NavBar extends React.Component {
 
     render() {
         return (
   <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="/">Band Buddy</Navbar.Brand>
+    <Navbar.Brand href="/login">Band Buddy</Navbar.Brand>
     <Nav className="mr-auto">
-      <Nav.Link href="profile">My Profile</Nav.Link>
-      <Nav.Link href="activeusers">Active Users</Nav.Link>
+      <Link to="profile">My Profile</Link>
+      <Link to="activeusers">Active Users</Link>
     </Nav>
     <Navbar.Toggle />
   <Navbar.Collapse className="justify-content-end">
