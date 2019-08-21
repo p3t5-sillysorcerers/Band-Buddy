@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import InputData from './00inputProfileData';
 import { Navbar } from "react-bootstrap"
 
+const createStyle={
+  margin: '100px',
+}
+
 class Create extends Component{
 
     render(){
@@ -20,9 +24,13 @@ class Create extends Component{
 
 </Navbar>
 
-            <div className="createPage">
+            <div className="createPage" style={createStyle}>
                 <div className="row">
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-6">
                     <InputData/>
+                  </div>
+                  <div className="col-sm-3"></div>
                 </div>
             </div>
 </>
