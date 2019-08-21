@@ -125,7 +125,7 @@ class App extends Component {
         {this.logoutHandler()}
         <div>
           <Switch>
-            <Route exact path="/" render={(props) => loggedIn ? ( 
+            <Route exact path="/login" render={(props) => loggedIn ? ( 
               <Redirect to="/profile" render={(props) => <Profile {...props}  username={this.state.username}/>}/>
             ):(
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
