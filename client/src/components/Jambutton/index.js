@@ -8,9 +8,10 @@ class JamButton extends React.Component {
         console.log(this.props.selectedMusicans)
         axios.post("api/jams", this.props.selectedMusicans)
             .then(response => {
-        console.log("posted" + response.data)
+        console.log("posted: " + JSON.stringify(response.data))  
       }
             )};
+
 
     render(props) {
         return (
@@ -19,5 +20,3 @@ class JamButton extends React.Component {
     }
 }
 export default JamButton
-
-// ()=>this.props.onClick(this.props.jamList)

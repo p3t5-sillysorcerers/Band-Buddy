@@ -10,27 +10,23 @@ import axios from 'axios';
 // import Button from "react-bootstrap/Button";
 import "./profile.css";
 import User from '../User'
+import CurrentJams from "../components/JamList"
 
+
+
+
+// loadJams = () => {
+//   axios.get("api/jams")
+//       .then(response => {
+//         this.setState({
+//           jams:response.data
+//         })
+//         console.log("posted: " + JSON.stringify(response.data))  
+//         })
+//         };
 
 
 function Profile(){
-
-    // state = {
-    //     profile: []
-    // };
-   
-    // Loads one Profile in the DB
-    //replace window.location.pathname --> username from passport ********
-    // componentDidMount(){
-        // //if authenticated then
-        // axios.get(`${"/api/profile" + window.location.pathname}`)
-        // .then(response =>{
-        // this.setState({
-        //   profile:response.data
-        // })
-        // console.log(this.state)
-        // })
-        // };
 
       const value = useContext(IdentityContext);
       console.log(value);

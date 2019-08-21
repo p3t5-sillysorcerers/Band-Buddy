@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 // import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
 import UploadImage from './pages/imageUploader'
+import AllJams from "./pages/00allJams"
 // import Bootstrap from "react-bootstrap";
 import "./App.css";
 // import ChatMessage from './components/Chat/ChatMessage';
@@ -124,7 +125,7 @@ class App extends Component {
         {this.logoutHandler()}
         <div>
           <Switch>
-            <Route exact path="/login" render={(props) => loggedIn ? ( 
+            <Route exact path="/" render={(props) => loggedIn ? ( 
               <Redirect to="/profile" render={(props) => <Profile {...props}  username={this.state.username}/>}/>
             ):(
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
@@ -136,6 +137,7 @@ class App extends Component {
             <Route exact path="/activeusers" component={ActiveUsers} />
             <Route exact path="/data" component={AllData} />
             <Route exact path="/input" component={UploadImage} />
+            <Route exact path="/jams" component={AllJams} />
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
     

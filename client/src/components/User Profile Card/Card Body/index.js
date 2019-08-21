@@ -29,7 +29,7 @@ render() {
             </div>
             <div className="buttonDiv">
 
-                <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name + ": " + this.props.instrument, username: this.props.username})}>Jam with me</button>
+                <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name, instrument: this.props.instrument, username: this.props.username, location: this.props.location})}>Jam with me</button>
             </div>
     </div>
 

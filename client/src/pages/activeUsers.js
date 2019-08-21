@@ -30,12 +30,14 @@ class ActiveUsers extends Component {
 
     onClick = e => {
         this.setState({inputValue: e})
-        console.log(e)
-         console.log("state" + this.state.profiles.name)
+        // console.log(e)
+        //  console.log("state" + this.state.profiles.name)
         this.setState({
             musicians: [...this.state.musicians, e.musician],
           })
+          console.log(e.username);
           this.removeCard(e.username);
+         
       }
 
 removeCard = username =>{
@@ -45,18 +47,8 @@ profile => profile.username !== username
 this.setState({
     profiles: filter
 });
+console.log(this.state.musicians)
 };
-
-
-     postJams(){
-        axios.post("api/jams")
-            .then(response => {
-                // this.setState({
-                //     jams: response.data
-                // })
-        console.log("posted" + response.data)
-      }
-            )};
 
     
     render() {
@@ -88,7 +80,6 @@ this.setState({
                                             instrument={profile.instrument}
                                             key={i}
                                             onClick = {this.onClick}
-                                            // index = {profile.index}
                                         />
                                     )
                                 })
