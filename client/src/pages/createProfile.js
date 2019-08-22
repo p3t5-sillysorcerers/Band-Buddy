@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import InputData from './00inputProfileData';
 import { Navbar } from "react-bootstrap"
 
+const createStyle={
+  margin: '100px',
+}
+
 class Create extends Component{
 
     render(){
@@ -11,8 +15,8 @@ class Create extends Component{
 <Navbar.Brand className="mr-auto" href="#home">
   <img
     src="https://i.imgur.com/Psb5bVc.png"
-    width="30"
-    height="30"
+    width="160"
+    height="160"
     className="d-inline-block align-top"
     alt="React Bootstrap logo"
   />
@@ -20,9 +24,13 @@ class Create extends Component{
 
 </Navbar>
 
-            <div className="createPage">
+            <div className="createPage" style={createStyle}>
                 <div className="row">
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-6">
                     <InputData/>
+                  </div>
+                  <div className="col-sm-3"></div>
                 </div>
             </div>
 </>

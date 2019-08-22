@@ -3,6 +3,9 @@ import { Input, FormBtn } from '../components/00inputProfileFrom';
 import ProfileUploadImage from "../components/ImageUpload";
 // import ReactUploadImage from "../components/uploadtest"
 import API from "../utils/API";
+import axios from 'axios';
+
+
 
 class InputData extends Component {
   state = {
@@ -29,19 +32,27 @@ class InputData extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("clicked", this.state)
-    API.register({
-      name: this.state.name,
-      username: this.state.username,
-      password: this.state.password,
-      location: this.state.location,
-      instrument: this.state.instrument,
-      skillLevel: this.state.skillLevel,
-      musicGenres: this.state.musicGenres,
-      image: this.state.file
-    })
-      .then(response => {
-        console.log("Profile Added")
+    
+    axios.get('https://randomuser.me/api/').then(response =>{
+      var profileImage = response.data.results[0].picture.large
+
+      API.register({
+        name: this.state.name,
+        username: this.state.username,
+        password: this.state.password,
+        location: this.state.location,
+        instrument: this.state.instrument,
+        skillLevel: this.state.skillLevel,
+        musicGenres: this.state.musicGenres,
+        image: profileImage
       })
+        .then(response => {
+          console.log(response)
+          window.location = "/login"
+        })
+    })
+
+    
   };
 
   //Image file Added
@@ -51,19 +62,17 @@ class InputData extends Component {
       file: file
     })
   };
+  
+  
 
   render() {
     return (
       <div className="createPage">
-        <div className="row">
-          <div className="col-sm-4">
-            {/* <ProfileUploadImage data={this.handlePhoto.bind(this)}  /> */}
-          </div>
-          <div className="col-sm-4">
+
             <form>
               <Input
                 name="name"
-                placeholder="Name (required)"
+                placeholder="Name"
                 onChange={this.handleInputChange}
                 value={this.state.name} />
               <Input
@@ -97,12 +106,6 @@ class InputData extends Component {
                 value={this.state.musicGenres} />
               <FormBtn onClick={this.handleFormSubmit}>Create Profile</FormBtn>
             </form>
-          </div>
-          <div className="col-sm-4">
-            <ProfileUploadImage data={this.handlePhoto.bind(this)} />
-          </div>
-          <div className="col-sm-4"></div>
-        </div>
       </div>
     )
   }

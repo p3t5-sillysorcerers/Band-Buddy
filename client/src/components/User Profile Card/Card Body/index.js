@@ -1,11 +1,7 @@
 import React from "react";
 import './style.css'
 
-const user = {
-    userInfo: {
-        image: "https://randomuser.me/api/portraits/women/31.jpg",
-    }
-}
+
 
 class CardBody extends React.Component {
 
@@ -13,7 +9,7 @@ render() {
     return (
         <div className="card">
             <div className="img-container">
-                <img src={user.userInfo.image} className="card-image" alt="..."></img>
+                <img src={this.props.image} className="card-image" alt="..."></img>
             </div>
             <div className="contentDiv">
                 <ul>
@@ -33,7 +29,7 @@ render() {
             </div>
             <div className="buttonDiv">
 
-                <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name + ": " + this.props.instrument, username: this.props.username})}>Jam with me</button>
+                <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name, instrument: this.props.instrument, username: this.props.username, location: this.props.location})}>Jam with me</button>
             </div>
     </div>
 

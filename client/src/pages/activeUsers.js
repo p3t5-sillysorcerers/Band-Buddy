@@ -30,12 +30,14 @@ class ActiveUsers extends Component {
 
     onClick = e => {
         this.setState({inputValue: e})
-        console.log(e)
-         console.log("state" + this.state.profiles.name)
+        // console.log(e)
+        //  console.log("state" + this.state.profiles.name)
         this.setState({
             musicians: [...this.state.musicians, e.musician],
           })
+          console.log(e.username);
           this.removeCard(e.username);
+         
       }
 
 removeCard = username =>{
@@ -45,18 +47,19 @@ profile => profile.username !== username
 this.setState({
     profiles: filter
 });
+console.log(this.state.musicians)
 };
 
+    postJams = e =>{
+        console.log("fired")
+        // console.log(this.props.selectedMusicans)
+        // axios.post("api/jams", this.props.selectedMusicans)
+        //     .then(response => {
+        // console.log("posted: " + JSON.stringify(response.data))  
+    //   }
+            // )
+        };
 
-     postJams(){
-        axios.post("api/jams")
-            .then(response => {
-                // this.setState({
-                //     jams: response.data
-                // })
-        console.log("posted" + response.data)
-      }
-            )};
 
     
     render() {
@@ -81,13 +84,13 @@ this.setState({
                                 {this.state.profiles.map((profile,i) => {
                                     return (
                                         <CardBody
+                                            image={profile.image}
                                             name={profile.name}
                                             username={profile.username}
                                             location={profile.location}
                                             instrument={profile.instrument}
                                             key={i}
                                             onClick = {this.onClick}
-                                            // index = {profile.index}
                                         />
                                     )
                                 })
@@ -96,7 +99,7 @@ this.setState({
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </>
         );
     }

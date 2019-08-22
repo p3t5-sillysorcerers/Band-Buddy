@@ -1,23 +1,11 @@
 import React from 'react';
-import axios from "axios";
-
 
 class JamButton extends React.Component {
 
-    postJams = () =>{
-        console.log(this.props.selectedMusicans)
-        axios.post("api/jams", this.props.selectedMusicans)
-            .then(response => {
-        console.log("posted" + response.data)
-      }
-            )};
-
-    render(props) {
+    render() {
         return (
-<button variant="warning" className="jambutton" onClick= {this.postJams} >Let's Jam</button> 
+<button type="button" className="btn btn-danger" onClick= {()=>this.props.onClick({musician: this.props.name})} >Let's Jam</button> 
         )
     }
 }
 export default JamButton
-
-// ()=>this.props.onClick(this.props.jamList)

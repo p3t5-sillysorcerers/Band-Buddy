@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 // import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
 import UploadImage from './pages/imageUploader'
+import AllJams from "./pages/00allJams"
 // import Bootstrap from "react-bootstrap";
 import "./App.css";
 // import ChatMessage from './components/Chat/ChatMessage';
@@ -31,17 +32,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // check for logged in user
-    // axios.get("/api/user")
-    //   .then(response => {
-    //     if (response.data) {
-    //       console.log("USER FROM API", response.data)
-    //       this.setState({
-    //         user: response.data,
-    //         userStateInfo: `${response.data.username} is logged in`
-    //       })
-    //     }
-    //   })
   }
 
   handleInputChange = event => {
@@ -64,14 +54,11 @@ class App extends Component {
           username: "",
           password: "",
           errorMessage: "",
-          test: ""
+          test: "",
         })
         console.log(this.state.loggedIn)
         if (this.state.loggedIn === true) {
           console.log("IT WORKS!")
-          return  <Redirect to="/profile" />;
-            // this.props.Router.push("profile")
-         
         }
       })
       .catch(error => {
@@ -84,6 +71,15 @@ class App extends Component {
       })
   }
 
+  logoutHandler = ()=>{
+    if(this.state.redirect === true){
+      this.setState({
+        redirect:false
+      })
+      return <Redirect to="/login"></Redirect>
+    }
+  }
+
   logout = event => {
     event.preventDefault();
     axios.post("/api/user/logout")
@@ -91,22 +87,15 @@ class App extends Component {
         this.setState({
           errorMessage: "",
           user: {},
-          loggedIn: false
-        })
+          loggedIn: false,
+          redirect: true
+        })      
       })
   }
 
   render() {
-    const loginRedirect = event => {
-      if (this.state.loggedIn === true) {
-        console.log("redirect event")
-        return <Redirect to="/profile" />;
-    }
-    // else (
-    //   return <Redirect to="/profile" />;
-    // )
-    }
 
+  
   const loggedIn = this.state.loggedIn
 
     return (
@@ -118,6 +107,7 @@ class App extends Component {
         logout: this.logout
       }}>
       <Router>
+        {this.logoutHandler()}
         <div>
           <Switch>
             <Route exact path="/login" render={(props) => loggedIn ? ( 
@@ -126,13 +116,19 @@ class App extends Component {
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
             )
           } />
-
+          <Route exact path="/" render={(props) => loggedIn ? ( 
+              <Redirect to="/profile" render={(props) => <Profile {...props}  username={this.state.username}/>}/>
+            ):(
+              <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
+            )
+          } />
             <Route exact path="/chat" component={ChatPage} />
             <Route exact path="/create" render={(props) => <Create {...props} inputProfiles={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/activeusers" component={ActiveUsers} />
             <Route exact path="/data" component={AllData} />
             <Route exact path="/input" component={UploadImage} />
+            <Route exact path="/jams" component={AllJams} />
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
     
