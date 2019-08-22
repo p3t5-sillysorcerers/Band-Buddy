@@ -6,9 +6,6 @@ import Logout from '../../logout';
 // import ActiveUsers from '../../pages/activeUsers';
 // import Login from '../../pages/login';
 
-//install react route and get the link from it 
-
-
 class NavBar extends React.Component {
 
     render() {
@@ -34,7 +31,6 @@ class NavBar extends React.Component {
     </Navbar.Text>
   </Navbar.Collapse>
     </Navbar>
-
         )
     }
 }
