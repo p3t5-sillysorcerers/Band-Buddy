@@ -12,20 +12,6 @@ import "./profile.css";
 import User from '../User'
 import CurrentJams from "../components/JamList"
 
-
-
-
-// loadJams = () => {
-//   axios.get("api/jams")
-//       .then(response => {
-//         this.setState({
-//           jams:response.data
-//         })
-//         console.log("posted: " + JSON.stringify(response.data))  
-//         })
-//         };
-
-
 function Profile(){
 
       const value = useContext(IdentityContext);
@@ -92,30 +78,6 @@ function Profile(){
             <div className="container profilestyling">
                 <div className="userProfile">
                     <div className="row">
-                       
-
-
-                        {/* <ul>
-                            <li>
-                                <strong>Name:</strong> {this.props.name}
-                            </li>
-                            <li>
-                                <strong>User Name:</strong> {this.props.username}
-                            </li>
-                            <li>
-                                <strong>From:</strong> {this.props.location}
-                            </li>
-                            <li>
-                                <strong>Plays:</strong> {this.props.instrument}
-                            </li>
-                            <li>
-                                <strong>Skill Level:</strong> {this.props.skillLevel}
-                            </li>
-                            <li>
-                                <strong>Music Genre:</strong> {this.props.musicGenres}
-                            </li>
-                        </ul> */}
-                        
                     </div>
 
                 </div>
