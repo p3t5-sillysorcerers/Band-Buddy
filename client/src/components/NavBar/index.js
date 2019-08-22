@@ -14,11 +14,18 @@ class NavBar extends React.Component {
     render() {
         return (
   <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="/login">Band Buddy</Navbar.Brand>
+    <Navbar.Brand href="/login">
+               <img
+                src="https://i.imgur.com/Psb5bVc.png"
+                width="160"
+                height="160"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo"
+              /></Navbar.Brand>
     <Nav className="mr-auto">
-      <Link to="profile" style= {{justifyContent: 'space-between'}}>My Profile&nbsp;&nbsp;</Link>
+      <Link to="profile" style= {{color: 'white'}}>My Profile&nbsp;&nbsp;</Link>
  
-      <Link to="activeusers" style= {{justifyContent: 'space-between'}}> Active Users</Link>
+      <Link to="activeusers" style= {{color: 'white'}}> Active Users</Link>
     </Nav>
     <Navbar.Toggle />
   <Navbar.Collapse className="justify-content-end">
