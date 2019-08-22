@@ -88,7 +88,7 @@ console.log(this.state.musicians)
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </>
         );
     }
