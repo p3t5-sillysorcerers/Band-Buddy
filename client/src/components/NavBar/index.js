@@ -16,9 +16,9 @@ class NavBar extends React.Component {
   <Navbar bg="dark" variant="dark">
     <Navbar.Brand href="/login">Band Buddy</Navbar.Brand>
     <Nav className="mr-auto">
-      <Link to="profile">My Profile</Link>{' '}
-
-      <Link to="activeusers">Active Users</Link>
+      <Link to="profile" style= {{justifyContent: 'space-between'}}>My Profile&nbsp;&nbsp;</Link>
+ 
+      <Link to="activeusers" style= {{justifyContent: 'space-between'}}> Active Users</Link>
     </Nav>
     <Navbar.Toggle />
   <Navbar.Collapse className="justify-content-end">
