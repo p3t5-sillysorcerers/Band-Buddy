@@ -7,12 +7,16 @@ const user = {
     }
 }
 
+const imageStyle={
+    margin: '20px'
+}
+
 class ProfImage extends React.Component {
 
 
 render() {
     return (
-            <div className=" profile-img-container">
+            <div className=" profile-img-container" style={imageStyle}>
                 <img src={user.userInfo.image} className="card-image" alt="..."></img>
             </div>
             )}
