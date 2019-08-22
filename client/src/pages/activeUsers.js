@@ -50,6 +50,17 @@ this.setState({
 console.log(this.state.musicians)
 };
 
+    postJams = e =>{
+        console.log("fired")
+        // console.log(this.props.selectedMusicans)
+        // axios.post("api/jams", this.props.selectedMusicans)
+        //     .then(response => {
+        // console.log("posted: " + JSON.stringify(response.data))  
+    //   }
+            // )
+        };
+
+
     
     render() {
         return (
@@ -88,7 +99,7 @@ console.log(this.state.musicians)
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </>
         );
     }

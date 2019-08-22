@@ -20,18 +20,6 @@ class AllProfiles extends Component {
         })
         };
 
-    //Loads ALL the Profiles  in the DB (THIS IS A METHOD TO USE)
-    // loadProfiles = () => {
-    //     API.getProfiles()
-    //         .then(res =>
-    //             this.setState({
-    //                 profiles: res.data,
-    //             })
-    //         )
-    //     console.log("state" + this.state)
-    //         .catch(err => console.log(err));
-    // };
-
     render() {
         return (
 
