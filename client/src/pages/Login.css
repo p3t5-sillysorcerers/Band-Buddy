@@ -18,6 +18,11 @@ body{
   background-size: cover;
   
 }
+
+.navbar{
+  height: 75px;
+  
+}
 /* 
 .login-component{
   background-image: url("../images/namroud-gorguis-FZWivbri0Xk-unsplash.jpg");
