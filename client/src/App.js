@@ -32,17 +32,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // check for logged in user
-    // axios.get("/api/user")
-    //   .then(response => {
-    //     if (response.data) {
-    //       console.log("USER FROM API", response.data)
-    //       this.setState({
-    //         user: response.data,
-    //         userStateInfo: `${response.data.username} is logged in`
-    //       })
-    //     }
-    //   })
   }
 
   handleInputChange = event => {
@@ -70,10 +59,6 @@ class App extends Component {
         console.log(this.state.loggedIn)
         if (this.state.loggedIn === true) {
           console.log("IT WORKS!")
-          // return  <Redirect to="/profile" />;
-
-            // this.props.Router.push("profile")
-         
         }
       })
       .catch(error => {
