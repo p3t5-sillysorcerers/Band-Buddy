@@ -19,7 +19,7 @@ import axios from "axios";
 // import Button from "react-bootstrap/Button";
 import "./profile.css";
 import User from "../User";
-import CurrentJams from "../components/JamList";
+// import CurrentJams from "../components/JamList";
 import { userInfo } from "os";
 
 // loadJams = () => {
