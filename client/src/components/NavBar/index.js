@@ -20,7 +20,7 @@ class NavBar extends React.Component {
                 alt="React Bootstrap logo"
               /></Navbar.Brand>
     <Nav className="mr-auto">
-      <Link to="profile" style= {{color: 'white'}}>My Profile &nbsp;&nbsp;&nbsp;</Link>
+      <Link to="profile" style= {{color: 'white', paddingRight: '20px'}}>My Profile </Link>
  
       <Link to="activeusers" style= {{color: 'white'}}> Active Users</Link>
     </Nav>
