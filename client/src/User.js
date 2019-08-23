@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import  IdentityContext  from "./identity-context";
+import { get } from "http";
 
 function User() {
 
@@ -9,7 +10,9 @@ function User() {
     }
 
     const identity = useContext(IdentityContext)
-    
+
+
+
     return (
             <div className='UserInfo' style={textStyle}>
                 <h1>{identity.user.username}</h1>
