@@ -147,9 +147,9 @@ resetFilter = e => {
           <div className="users">
             <div className="row">
               <div className="col-sm-4 group">
-              <Hook
+              {/* <Hook
               profiles={this.state.profiles}
-              fakeName = {"Rich"} />
+              fakeName = {"Rich"} /> */}
                 <ListGroup>
                   <JamList 
                   musicians={this.state.musicians}
