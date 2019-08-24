@@ -1,13 +1,12 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import CardBody from "../components/User Profile Card/Card Body";
 import UserFilter from "../components/Filter"
 import JamList from "../components/ListGroup";
 import JamButton from "../components/Jambutton";
-import Hook from "../components/useStateHook"
 import axios from "axios";
-import { ListGroup, Button, Modal, Dropdown,Form} from "react-bootstrap";
+import { ListGroup, Button, Modal,Form} from "react-bootstrap";
 import TimePicker from 'react-bootstrap-time-picker';
 import "./activeusers.css";
 
@@ -17,7 +16,8 @@ class ActiveUsers extends Component {
     profiles: [],
     unfilterdProfiles: [],
     instrumentProfiles:[],
-    testfilter:[],
+    guitarProfiles:[],
+    currentProfiles:[],
     inputValue: "",
     musicians: [],
     showing: false,
@@ -30,18 +30,21 @@ class ActiveUsers extends Component {
     axios.get("api/profiles").then(response => {
       this.setState({
         profiles: response.data,
-        unfilterdProfiles: response.data
+        unfilterdProfiles: response.data,
       });
+      const guitarProfiles = this.state.profiles
       console.log(response.data);
+      console.log(guitarProfiles)
     });
   }
   //_______________________
 
   //USER ADDED TO JAM LIST ON LICK OF "LETS JAM" CARD BUTTON
   onClick = e => {
-    this.setState({ inputValue: e });
+      console.log(e)
+    // this.setState({ inputValue: e });
     this.setState({
-      musicians: [...this.state.musicians, e.musician]
+      musicians: [...this.state.musicians, `${e.musician +": "+ e.instrument}`]
     });
     console.log(e.username);
     this.removeCard(e.username);
@@ -57,7 +60,7 @@ class ActiveUsers extends Component {
     console.log("username: "+ username)
     this.setState({
       profiles: filter,
-      previous: profiles
+      currentProfiles: profiles
     });
     console.log(this.state.musicians);
   };
@@ -75,7 +78,7 @@ class ActiveUsers extends Component {
     axios.post("api/jams", this.state.musicians).then(response => {
       console.log("posted: " + JSON.stringify(response.data));
         this.handleClose()
-      alert("Jam Added");
+
     });
   };
   //_______________________
@@ -99,27 +102,55 @@ this.setState({
 
 filterInstruments = names =>{
     const profiles = this.state.profiles
-   const unfilterdProfiles = this.state.profiles
-    this.setState({profiles: unfilterdProfiles});
-
+    const unfilterdProfiles = this.state.unfilterdProfiles;
+    const currentProfiles = this.state.currentProfiles
+    
+    console.log("un: "+ unfilterdProfiles)
+   
     console.log(profiles)
-    if(names == "All"){
-         this.setState({ profiles: this.state.profiles})
-    }
-    else {
-    console.log("name: "+ names)
-    const instrumentfilter = profiles.filter( profile => profile.instrument === names);
-        this.setState({profiles: instrumentfilter});
-        console.log(instrumentfilter)
-        console.log(profiles)
-    }
-    };
-
-resetFilter = e => {
-    this.setState({ profiles: this.state.profiles})
-    console.log("Keeps fireing")
-}
-
+    if(names === "All"){
+        this.setState({
+          profiles: unfilterdProfiles
+        });
+    } else if(names === "Guitar") {
+        const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+        this.setState({
+            profiles: instrumentfilter
+          });
+    } else if(names === "Bass") {
+            const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+            this.setState({
+                profiles: instrumentfilter
+              });
+    } else if(names === "Drums") {
+                const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+                this.setState({
+                    profiles: instrumentfilter
+                  });
+    } else if(names === "Vocals") {
+                    const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+                    this.setState({
+                        profiles: instrumentfilter
+                      });
+    } else if(names === "Keys/Synth") {
+                        const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+                        this.setState({
+                            profiles: instrumentfilter
+                          });
+     } else if(names === "Brass") {
+                            const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+                            this.setState({
+                                profiles: instrumentfilter
+                              });
+                            } else if(names === "Other") {
+                                const instrumentfilter = unfilterdProfiles.filter( profile => profile.instrument === names);
+                                this.setState({
+                                    profiles: instrumentfilter
+                                  });
+                                } 
+        
+    };   
+ 
   //_______________________
 
 
@@ -147,9 +178,7 @@ resetFilter = e => {
           <div className="users">
             <div className="row">
               <div className="col-sm-4 group">
-              {/* <Hook
-              profiles={this.state.profiles}
-              fakeName = {"Rich"} /> */}
+
                 <ListGroup>
                   <JamList 
                   musicians={this.state.musicians}

@@ -5,7 +5,7 @@ import {ListGroup, Card, Col} from 'react-bootstrap';
 function JamSession(props){
 
 return (
-    <Col sm={2}>
+  
         <Card>
             <Card.Header>Upcoming Jam Session</Card.Header>
                 <ListGroup variant="flush">
@@ -14,7 +14,7 @@ return (
                 )}
                 </ListGroup>
         </Card>
-    </Col>
+  
 )
 }
 export default JamSession;

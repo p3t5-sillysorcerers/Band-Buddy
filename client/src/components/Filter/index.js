@@ -2,7 +2,7 @@ import React from 'react';
 import {DropdownButton, Dropdown} from 'react-bootstrap';
 
 function UserFilter(props) {
-  const names = ["Guitar","Bass","Drums","Vocals","Key/Synthesis","Brass","Other","All"]
+  const names = ["Guitar","Bass","Drums","Vocals","Keys/Synth","Brass","Other","All"]
   return (
     <DropdownButton onClick={()=>props.onReset()} variant="secondary" id="dropdown-variants-secondary" title={props.title} >
     {names.map((names,i) =>(

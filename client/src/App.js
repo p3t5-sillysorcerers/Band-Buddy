@@ -5,22 +5,13 @@ import Login from './pages/login';
 import ActiveUsers from './pages/activeUsers';
 import Create from './pages/createProfile';
 import NotFound from './pages/notFound';
-import AllData from './pages/00allProfileData';
 import Footer from './components/Footer';
-// import InputData from './pages/00inputProfileData';
 import ProfileData from './pages/00profileData';
 import UploadImage from './pages/imageUploader'
-import AllJams from "./pages/00allJams"
-// import Bootstrap from "react-bootstrap";
 import "./App.css";
-// import ChatMessage from './components/Chat/ChatMessage';
-import ChatPage from './pages/ChatPage';
-// import Signup from './components/SignUp/Signup';
-// import { default as Chatkit } from '@pusher/chatkit-server';
 import axios from "axios";
 import  IdentityContext  from "./identity-context";
-// import Nav from "./Nav"
-// import User from "./User"
+
 
 class App extends Component {
 
@@ -122,13 +113,10 @@ class App extends Component {
               <Login {...props} loginHandler={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />
             )
           } />
-            <Route exact path="/chat" component={ChatPage} />
             <Route exact path="/create" render={(props) => <Create {...props} inputProfiles={this.login} username={this.state.username} password={this.state.password} handleInput={this.handleInputChange} />} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/activeusers" component={ActiveUsers} />
-            <Route exact path="/data" component={AllData} />
             <Route exact path="/input" component={UploadImage} />
-            <Route exact path="/jams" component={AllJams} />
             <Route exact path="/:userName" component={ProfileData} />
             <Route component={NotFound} />
     

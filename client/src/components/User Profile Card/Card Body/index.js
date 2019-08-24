@@ -2,7 +2,6 @@ import React from "react";
 import './style.css'
 
 
-
 class CardBody extends React.Component {
 
 render() {
@@ -13,23 +12,24 @@ render() {
             </div>
             <div className="contentDiv">
                 <ul>
-                    <li>
-                        <strong>Name:</strong> {this.props.name}
+                <li>
+                        <h4> {this.props.username}</h4>
                     </li>
                     <li>
-                        <strong>User Name:</strong> {this.props.username}
+                    {this.props.name}
+                    </li>
+                
+                    <li>
+                      {this.props.location}
                     </li>
                     <li>
-                        <strong>From:</strong> {this.props.location}
-                    </li>
-                    <li>
-                        <strong>Plays:</strong> {this.props.instrument}
+                       {this.props.instrument}
                     </li>
                 </ul>
             </div>
             <div className="buttonDiv">
 
-                <button id= {this.props.name} type="button" className="btn btn-success" onClick={()=>this.props.onClick({musician: this.props.name, instrument: this.props.instrument, username: this.props.username, location: this.props.location})}>Jam with me</button>
+                <button id= {this.props.name} type="button" className="btn btn-success cardJamButton" onClick={()=>this.props.onClick({musician: this.props.name, instrument: this.props.instrument, username: this.props.username, location: this.props.location})}>Jam with me</button>
             </div>
     </div>
 

@@ -5,11 +5,11 @@ function HookCounterFour(props) {
 
 	const addItem = () => {
 		setItems([
-            props.fakeName
-			// {
-			// 	id: items.length,
-			// 	value: Math.floor(Math.random() * 10) + 1
-			// }
+			...items,
+			{
+				id: items.length,
+				value: Math.floor(Math.random() * 10) + 1
+			}
 		])
 	}
 

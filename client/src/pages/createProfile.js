@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InputData from './00inputProfileData';
+import InputData from './inputProfileData';
 import { Navbar } from "react-bootstrap"
 
 const createStyle={
@@ -19,6 +19,7 @@ class Create extends Component{
     height="160"
     className="d-inline-block align-top"
     alt="React Bootstrap logo"
+    onClick = {()=>window.location = "/"}
   />
   </Navbar.Brand>
 

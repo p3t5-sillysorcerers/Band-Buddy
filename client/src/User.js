@@ -5,6 +5,7 @@ import { get } from "http";
 function User() {
 
     const textStyle={
+        fontFamily: 'Righteous',
         color:'white',
         align:'center'
     }
