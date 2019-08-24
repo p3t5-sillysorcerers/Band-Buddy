@@ -2,35 +2,20 @@ import React, { useContext } from "react";
 import IdentityContext from "../../src/identity-context";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import {
-  Button,
-  Container,
-  Col,
-  Row,
-  Jumbotron,
-  ListGroup,
-  Card,
-  Nav
-} from "react-bootstrap";
-// import ProfileInfo from '../components/Profile Info';
+import {Container,Row,Jumbotron} from "react-bootstrap";
 import ProfImage from "../components/User Profile Card/Card Image";
-// import ListGroup from "react-bootstrap/ListGroup";
-import axios from "axios";
-// import Button from "react-bootstrap/Button";
 import "./profile.css";
 import User from "../User";
-// import CurrentJams from "../components/JamList";
-import { userInfo } from "os";
+import AllJams from "./Jams"
 
-// loadJams = () => {
-//   axios.get("api/jams")
-//       .then(response => {
-//         this.setState({
-//           jams:response.data
-//         })
-//         console.log("posted: " + JSON.stringify(response.data))
-//         })
-//         };
+
+const jamsWrapper={
+display: "flex",
+flexWrap: "wrap",
+alignItems: "baseline",
+justifyContent: "space-between"
+}
+
 
 function Profile() {
   const value = useContext(IdentityContext);
@@ -54,7 +39,10 @@ function Profile() {
           </Row>
         </Jumbotron>
       </Container>
-
+      <Container 
+      style = {jamsWrapper}>  
+<AllJams />
+</Container>
       <Footer />
     </>
   );

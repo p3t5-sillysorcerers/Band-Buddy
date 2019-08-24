@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
 import  IdentityContext  from "./identity-context";
+import { get } from "http";
 
 function User() {
 
     const textStyle={
+        fontFamily: 'Righteous',
         color:'white',
         align:'center'
     }
 
     const identity = useContext(IdentityContext)
-    
+
+
+
     return (
             <div className='UserInfo' style={textStyle}>
                 <h1>{identity.user.username}</h1>

@@ -1,5 +1,5 @@
 import React from "react";
-import './style.css'
+
 
 const user = {
     userInfo: {
@@ -8,7 +8,8 @@ const user = {
 }
 
 const imageStyle={
-    margin: '20px'
+    margin: '20px',
+  
 }
 
 class ProfImage extends React.Component {

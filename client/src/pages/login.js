@@ -1,14 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import { Navbar, InputGroup, Form, FormControl, Button, Container, Col, Row, Jumbotron } from "react-bootstrap"
 import "./Login.css"
+
+const loginStyle={
+  color: 'white',
+  backgroundColor: "#F55F00",
+  borderColor: "#F55F00"
+
+}
+const heroText={
+  color: '#F55F00',
+  fontFamily: 'Righteous'
+}
+
+const subText={
+  fontFamily: 'Righteous'
+}
 
 
 const Login = (props) => {
   return (
-    // <div class="container col-4"></div>
-    // <Image source={require('../images/cassette.jpg')} style={styles.container}>
+  
     <>
-
       <Navbar bg="dark">
         <Navbar.Brand className="mr-auto" href="#home">
           <img
@@ -43,20 +56,18 @@ const Login = (props) => {
               type="password"
             />
           </InputGroup>
-          <Button type="submit" href="/profile" value="Log In" onClick={props.loginHandler} >Log In</Button>
+          <Button type="submit" href="/profile" value="Log In" onClick={props.loginHandler} style={loginStyle} >Log In</Button>
 
         </Form>
       </Navbar>
 
-
-
       <Jumbotron>
         <Container>
           <Row>
-            <Col sm={12}><h1 className="display-4">Band Buddy! Find music buds in your area!</h1></Col>
+            <Col sm={12}><h1 className="display-4" style ={heroText}>Band Buddy! Find music buds in your area!</h1></Col>
           </Row>
           <Row>
-            <Col sm={12}>  <p className="lead alert-link">Create a profile, add your instrument, and jam.</p></Col>
+            <Col sm={12}>  <p className="lead alert-link" style={subText}>Create a profile, add your instrument, and jam.</p></Col>
           </Row>
           <Row>
             <Col sm={2}>

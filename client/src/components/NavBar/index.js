@@ -2,9 +2,6 @@ import React from 'react';
 import {Navbar, Nav} from "react-bootstrap";
 import { BrowserRouter as Router , Link } from "react-router-dom";
 import Logout from '../../logout';
-// import Profile from '../../pages/profile';
-// import ActiveUsers from '../../pages/activeUsers';
-// import Login from '../../pages/login';
 
 class NavBar extends React.Component {
 
