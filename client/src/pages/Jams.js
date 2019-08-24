@@ -4,6 +4,8 @@ import React, {
 import JamSession from "../components/JamSession"
 import axios from "axios";
 
+
+
 class AllJams extends Component {
     state = {
         jamSessions: [],

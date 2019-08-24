@@ -12,7 +12,8 @@ class InputData extends Component {
     instrument: "",
     skillLevel: "",
     musicGenres: "",
-    file: {}
+    file: {},
+    active: [true],
   };
 
   handleInputChange = event => {
@@ -40,6 +41,7 @@ class InputData extends Component {
         instrument: this.state.instrument,
         skillLevel: this.state.skillLevel,
         musicGenres: this.state.musicGenres,
+        active:this.state.active,
         image: profileImage
       })
         .then(response => {

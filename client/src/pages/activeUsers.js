@@ -17,7 +17,6 @@ class ActiveUsers extends Component {
     unfilterdProfiles: [],
     instrumentProfiles:[],
     guitarProfiles:[],
-    currentProfiles:[],
     inputValue: "",
     musicians: [],
     showing: false,
@@ -103,7 +102,7 @@ this.setState({
 filterInstruments = names =>{
     const profiles = this.state.profiles
     const unfilterdProfiles = this.state.unfilterdProfiles;
-    const currentProfiles = this.state.currentProfiles
+   
     
     console.log("un: "+ unfilterdProfiles)
    
@@ -186,7 +185,13 @@ filterInstruments = names =>{
                   />
                   <Button
                   type="button"
-                  className="btn btn-danger"
+                  className="btn btn-secondary"
+                  style = {{
+                      backgroundColor: "#F55F01",
+                      border: "#F55F01",
+                     marginLeft: "10px",
+                     marginRight: "10px"
+                    }}
                   onClick={this.handleShow}
                 >
                   Set It Up
@@ -223,7 +228,6 @@ filterInstruments = names =>{
                 </Modal>
               </div>
               <div className="col-sm-8">
-             
               <UserFilter 
               onReset={()=>this.resetFilter}
               title={this.state.filtered}

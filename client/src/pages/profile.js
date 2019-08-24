@@ -4,22 +4,21 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import {Container,Row,Jumbotron} from "react-bootstrap";
 import ProfImage from "../components/User Profile Card/Card Image";
+import ToggleSwitch from "../components/toggleSwitch"
 import "./profile.css";
 import User from "../User";
 import AllJams from "./Jams"
-
 
 const jamsWrapper={
 display: "flex",
 flexWrap: "wrap",
 alignItems: "baseline",
-justifyContent: "space-between"
+justifyContent: "space-evenly"
 }
-
 
 function Profile() {
   const value = useContext(IdentityContext);
-  console.log(value);
+  // console.log(value.name);
 
   const containerStyle = {
     margin: "50px",
@@ -32,12 +31,16 @@ function Profile() {
       <NavBar />
       <Container>
         <Jumbotron style={containerStyle}>
+      
           <Row>
             <ProfImage />
 
             <User />
           </Row>
+          {/* <ToggleSwitch 
+          /> */}
         </Jumbotron>
+    
       </Container>
       <Container 
       style = {jamsWrapper}>  
