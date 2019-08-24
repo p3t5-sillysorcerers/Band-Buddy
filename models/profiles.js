@@ -14,6 +14,7 @@ const profileSchema = new Schema({
   location: { type: String },
   profileLinks: { type: String },
   image: { type: String },
+  active: [Boolean],
   updated: { type: Date, default: Date.now }
 });
 

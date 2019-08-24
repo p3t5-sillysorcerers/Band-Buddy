@@ -10,7 +10,7 @@ return (
             <Card.Header>Upcoming Jam Session</Card.Header>
                 <ListGroup variant="flush">
                 {props.name.map((names, i)=>
-                    <ListGroup.Item names={names} key={props.name.id}>{names}</ListGroup.Item>
+                    <ListGroup.Item names={names} key={i}>{names}</ListGroup.Item>
                 )}
                 </ListGroup>
         </Card>

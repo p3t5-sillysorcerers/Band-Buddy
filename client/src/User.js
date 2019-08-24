@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import  IdentityContext  from "./identity-context";
+import ToggleSwitch from "./components/toggleSwitch"
 import { get } from "http";
 
 function User() {
@@ -12,16 +13,22 @@ function User() {
 
     const identity = useContext(IdentityContext)
 
-
+    console.log(identity)
 
     return (
+  
             <div className='UserInfo' style={textStyle}>
                 <h1>{identity.user.username}</h1>
                 <h4> {identity.user.location}</h4>
                 <h5>{identity.user.instrument}</h5>
                 <h5>{identity.user.musicGenres}</h5>
-
+                <ToggleSwitch 
+                username= {identity.user.username}
+                active={identity.user.active}
+                />
             </div>
+                
+               
     )
 }
 
