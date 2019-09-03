@@ -2,15 +2,15 @@ import React from 'react';
 import {Navbar, Nav} from "react-bootstrap";
 import { BrowserRouter as Router , Link } from "react-router-dom";
 import Logout from '../../logout';
-// import Profile from '../../pages/profile';
-// import ActiveUsers from '../../pages/activeUsers';
-// import Login from '../../pages/login';
+
+
+
 
 class NavBar extends React.Component {
 
     render() {
         return (
-  <Navbar bg="dark" variant="dark">
+  <Navbar bg="dark" variant="dark"style= {{backgroundColor: 'white'}}>
     <Navbar.Brand href="/login">
                <img
                 src="https://i.imgur.com/Psb5bVc.png"

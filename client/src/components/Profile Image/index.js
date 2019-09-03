@@ -13,11 +13,8 @@ class ProfileImage extends Component {
         profileLinks: "",
     }
 
-
     handleInputChange = event => {
-
         const {name , value} = event.target;
-
         this.setState({
             [name]: value
         });
@@ -28,7 +25,6 @@ class ProfileImage extends Component {
     }
 
     render() {
-       
         return (
                     <form className="form" >
                         <input className="formInput"
